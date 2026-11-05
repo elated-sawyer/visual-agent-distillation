@@ -1,0 +1,83 @@
+{
+  "skills": [
+    {
+      "id": "solve-visual-sokoban",
+      "name": "Solve a visual Sokoban board"
+    },
+    {
+      "id": "parse-visual-sokoban-state",
+      "name": "Parse visible Sokoban entities and player-relative relations"
+    },
+    {
+      "id": "assess-box-push-feasibility",
+      "name": "Assess a visible box push before acting"
+    },
+    {
+      "id": "position-for-box-push",
+      "name": "Reach the required side of a box"
+    },
+    {
+      "id": "select-bounded-action-batch",
+      "name": "Select a bounded Sokoban action batch"
+    },
+    {
+      "id": "serialize-required-sokoban-response",
+      "name": "Serialize a protocol-compliant Sokoban response"
+    },
+    {
+      "id": "verify-action-outcome",
+      "name": "Verify parsed actions and visible state change"
+    },
+    {
+      "id": "replan-after-no-progress",
+      "name": "Replan after an unchanged or non-progressing state"
+    }
+  ],
+  "contexts": [
+    {
+      "skill_id": "parse-visual-sokoban-state",
+      "id": "player-relative-entity-report-required",
+      "description": "The current response requires visually grounded player-relative statements about visible boxes or targets."
+    },
+    {
+      "skill_id": "assess-box-push-feasibility",
+      "id": "adjacent-box-with-visible-destination",
+      "description": "A directional choice could push a neighboring visible box, requiring inspection of the player side, destination, and nearby blockers."
+    },
+    {
+      "skill_id": "position-for-box-push",
+      "id": "required-push-side-not-occupied",
+      "description": "A contemplated box movement requires the player to first navigate to a different visible side of the box."
+    },
+    {
+      "skill_id": "select-bounded-action-batch",
+      "id": "predictable-walk-segment-within-action-budget",
+      "description": "The current board supports a short sequence of immediate walking movements within one response without an intervening uncertain push."
+    },
+    {
+      "skill_id": "select-bounded-action-batch",
+      "id": "state-changing-or-uncertain-next-move",
+      "description": "The next movement could push a box or encounter a visible obstruction, favoring a minimal batch and earlier observation check."
+    },
+    {
+      "skill_id": "serialize-required-sokoban-response",
+      "id": "native-structured-output-required",
+      "description": "A selected action must be placed in the native structured response rather than emitted as unconstrained text."
+    },
+    {
+      "skill_id": "serialize-required-sokoban-response",
+      "id": "format-recovery-after-empty-parse",
+      "description": "A prior response produced no parsed action in association with format-related feedback, so the next response requires renewed serialization compliance."
+    },
+    {
+      "skill_id": "verify-action-outcome",
+      "id": "submitted-action-needs-outcome-check",
+      "description": "A prior action submission has later feedback or a board observation that can establish the actual visible outcome before another decision."
+    },
+    {
+      "skill_id": "replan-after-no-progress",
+      "id": "unchanged-board-after-attempt",
+      "description": "The displayed board repeats a recent visible arrangement after an attempted action or empty action extraction."
+    }
+  ]
+}

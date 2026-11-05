@@ -1,0 +1,132 @@
+[
+  {
+    "rank": 1,
+    "candidate_id": "C023",
+    "contexts": [
+      [
+        "assess-box-push-feasibility",
+        "adjacent-box-with-visible-destination"
+      ],
+      [
+        "replan-after-no-progress",
+        "unchanged-board-after-attempt"
+      ],
+      [
+        "select-bounded-action-batch",
+        "predictable-walk-segment-within-action-budget"
+      ],
+      [
+        "select-bounded-action-batch",
+        "state-changing-or-uncertain-next-move"
+      ],
+      [
+        "serialize-required-sokoban-response",
+        "format-recovery-after-empty-parse"
+      ],
+      [
+        "verify-action-outcome",
+        "submitted-action-needs-outcome-check"
+      ]
+    ],
+    "newly_covered": [
+      [
+        "assess-box-push-feasibility",
+        "adjacent-box-with-visible-destination"
+      ],
+      [
+        "replan-after-no-progress",
+        "unchanged-board-after-attempt"
+      ],
+      [
+        "select-bounded-action-batch",
+        "predictable-walk-segment-within-action-budget"
+      ],
+      [
+        "select-bounded-action-batch",
+        "state-changing-or-uncertain-next-move"
+      ],
+      [
+        "serialize-required-sokoban-response",
+        "format-recovery-after-empty-parse"
+      ],
+      [
+        "verify-action-outcome",
+        "submitted-action-needs-outcome-check"
+      ]
+    ],
+    "representativeness_gain": 9.183993576716516,
+    "prefix_count": 5,
+    "reason": "new_opportunity_coverage"
+  },
+  {
+    "rank": 2,
+    "candidate_id": "C073",
+    "contexts": [
+      [
+        "assess-box-push-feasibility",
+        "adjacent-box-with-visible-destination"
+      ],
+      [
+        "position-for-box-push",
+        "required-push-side-not-occupied"
+      ],
+      [
+        "select-bounded-action-batch",
+        "state-changing-or-uncertain-next-move"
+      ],
+      [
+        "verify-action-outcome",
+        "submitted-action-needs-outcome-check"
+      ]
+    ],
+    "newly_covered": [
+      [
+        "position-for-box-push",
+        "required-push-side-not-occupied"
+      ]
+    ],
+    "representativeness_gain": 2.6456020390252863,
+    "prefix_count": 2,
+    "reason": "new_opportunity_coverage"
+  },
+  {
+    "rank": 3,
+    "candidate_id": "C016",
+    "contexts": [
+      [
+        "assess-box-push-feasibility",
+        "adjacent-box-with-visible-destination"
+      ],
+      [
+        "select-bounded-action-batch",
+        "state-changing-or-uncertain-next-move"
+      ]
+    ],
+    "newly_covered": [],
+    "representativeness_gain": 3.3450875008176446,
+    "prefix_count": 1,
+    "reason": "visual_decision_representativeness"
+  },
+  {
+    "rank": 4,
+    "candidate_id": "C114",
+    "contexts": [
+      [
+        "assess-box-push-feasibility",
+        "adjacent-box-with-visible-destination"
+      ],
+      [
+        "select-bounded-action-batch",
+        "state-changing-or-uncertain-next-move"
+      ],
+      [
+        "verify-action-outcome",
+        "submitted-action-needs-outcome-check"
+      ]
+    ],
+    "newly_covered": [],
+    "representativeness_gain": 1.8916155392883296,
+    "prefix_count": 2,
+    "reason": "visual_decision_representativeness"
+  }
+]
