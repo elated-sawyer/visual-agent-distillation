@@ -4,15 +4,15 @@
 
 Adapt a visual agent by reusing a small set of interaction histories. Select complete trajectories, retain their original images and causal prefixes, and transfer a stronger teacher's behavior through fresh student responses. Offline training needs no further environment interaction; the trained agent is evaluated through new interactions.
 
-With **four selected trajectories per environment**, our Qwen3.5-4B student reaches **82.08% on Navigation** and **85.55% on Sokoban**, up from 49.17% and 60.16%. The same approach improves spatial mapping across single-room and two-room scenes. This repository contains the training and evaluation implementation, compact trajectory examples, frozen configurations, and measured results.
+With **four selected trajectories per environment**, our Qwen3.5-4B student reaches **82.08% on Navigation** and **85.55% on Sokoban**, up from 49.17% and 60.16%. On held-out SpatialGym rooms, the mapping score rises from **0.255 to 0.411**, recovering **77.4% of the measured student–teacher gap**, with improvements in **all four held-out rooms**. This repository contains the training and evaluation implementation, compact trajectory examples, frozen configurations, and measured results.
 
 [Results](#results) · [Method](#method) · [Trajectory examples](#explore-four-real-trajectories) · [Quick start](#quick-start) · [Training](#training-and-evaluation) · [Documentation](#documentation)
 
 > **Release scope:** the code starts from an already selected set of trajectories. Environment adapters, collection, prefix preparation, offline OPD, matched SFT, online OPD, and evaluation are included. The trajectory-selection front end is not released; its precomputed example annotations and choices are available to inspect.
 
-![Paper Figure 1: representative trajectory selection, results across trajectory budgets, and task-level transfer in Navigation, Sokoban, and SpatialGym.](assets/figures/teaser.png)
+![Paper Figure 1: representative trajectory selection and transfer in Navigation, Sokoban, and held-out single-room SpatialGym; four trajectories recover 77.4% of the SpatialGym student–teacher gap.](assets/figures/teaser.png)
 
-**Figure 1 — Four selected trajectories, broad task transfer.** Reproduced from the paper. The selected-data results are compared with the original student, teacher, and online OPD. Axes are zoomed and trajectory budgets are categorical. Task improvements use four-repeat task means. Results use one training seed; K1/K16 and random-subset endpoints are collaborator-reported. Click the image to view it at full resolution.
+**Figure 1 — Four selected trajectories, broad task transfer.** Reproduced from the paper. K4 outperforms the mean of three random subsets on Navigation and Sokoban; the SpatialGym panel shows **held-out single-room** results and **77.4% teacher-gap recovery**. Curves retain the original student, teacher, online OPD, and larger-data comparisons. Axes are zoomed and trajectory budgets are categorical. Task improvements use four-repeat task means. Results use one training seed; K1/K16 and random-subset endpoints are collaborator-reported. Click the image to view it at full resolution.
 
 ## Results
 
@@ -28,7 +28,7 @@ All adapted models below use **100 updates × 64 responses**, with the final mod
 | Full-pool SFT | 64.17% | 15.42% | 77.73% | 0.424 | 0.283 |
 | Online OPD | 78.75% | 21.25% | 85.94% | 0.476 | 0.305 |
 
-Four-trajectory OPD recovers **91.86% of the measured student–teacher gap on standard Navigation** and **90.28% on Sokoban**, where gap recovery is `(adapted − original student) / (teacher − original student)`. Broader training histories provide further gains on spatial mapping.
+Four-trajectory OPD recovers **91.86% of the measured student–teacher gap on standard Navigation**, **90.28% on Sokoban**, and **77.4% on held-out SpatialGym rooms**, where gap recovery is `(adapted − original student) / (teacher − original student)`. The table retains both held-out single-room and two-room SpatialGym results.
 
 Navigation and Sokoban report **binary success rates**. SpatialGym reports its **continuous cognitive-map score**, not a success percentage. The held-out single-room panel is a four-room development split; the two-room panel tests transfer to a different room layout. Navigation long-horizon uses different task configurations in the same simulator scenes.
 
