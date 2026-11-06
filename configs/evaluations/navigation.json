@@ -1,0 +1,23 @@
+[
+  {
+    "name": "development",
+    "scope": "monitor",
+    "environment": "navigation",
+    "protocol": "../environments/navigation.json",
+    "panel": "../panels/navigation-monitor.json"
+  },
+  {
+    "name": "navigation",
+    "scope": "final",
+    "environment": "navigation",
+    "protocol": "../environments/navigation.json",
+    "panel": "../panels/navigation.json"
+  },
+  {
+    "name": "navigation-long",
+    "scope": "final",
+    "environment": "navigation",
+    "protocol": "../environments/navigation-long.json",
+    "panel": "../panels/navigation-long.json"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "environment": "navigation",
+  "updates": 100,
+  "batch_size": 64,
+  "seed": 20261019,
+  "learning_rate": 1e-06,
+  "response_limit": 32768,
+  "context_limit": 86016,
+  "evaluation_context_limit": 262136,
+  "evaluation_interval": 5,
+  "final_repeats": 4,
+  "enable_thinking": true,
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": -1
+}

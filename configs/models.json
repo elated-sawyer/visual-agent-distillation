@@ -1,0 +1,14 @@
+{
+  "student_4b": {
+    "id": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+  },
+  "student_9b": {
+    "id": "Qwen/Qwen3.5-9B",
+    "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a"
+  },
+  "teacher": {
+    "id": "Qwen/Qwen3.5-27B",
+    "revision": "b7ca741b86de18df552fd2cc952861e04621a4bd"
+  }
+}

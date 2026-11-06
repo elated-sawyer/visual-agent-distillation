@@ -1,0 +1,16 @@
+[
+  {
+    "name": "development",
+    "scope": "monitor",
+    "environment": "sokoban",
+    "protocol": "../environments/sokoban.json",
+    "panel": "../panels/sokoban-monitor.json"
+  },
+  {
+    "name": "sokoban",
+    "scope": "final",
+    "environment": "sokoban",
+    "protocol": "../environments/sokoban.json",
+    "panel": "../panels/sokoban.json"
+  }
+]

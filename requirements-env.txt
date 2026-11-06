@@ -1,0 +1,6 @@
+# Environment-only CPU smoke. This is NOT the VAGEN/veRL GPU training stack.
+numpy==1.26.4
+Pillow==10.4.0
+PyYAML==6.0.2
+gym==0.26.2
+gym-sokoban==0.0.6

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "development",
+    "scope": "monitor",
+    "environment": "spatial",
+    "protocol": "../environments/spatial-single.json",
+    "panel": "../panels/spatial-monitor.json"
+  },
+  {
+    "name": "spatial-single",
+    "scope": "final",
+    "environment": "spatial",
+    "protocol": "../environments/spatial-single.json",
+    "panel": "../panels/spatial-single.json"
+  },
+  {
+    "name": "spatial-two-room",
+    "scope": "final",
+    "environment": "spatial",
+    "protocol": "../environments/spatial-two-room.json",
+    "panel": "../panels/spatial-two-room.json"
+  }
+]

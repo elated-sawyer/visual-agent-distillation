@@ -1,0 +1,226 @@
+[
+  {
+    "seed": 0,
+    "repeat": 0,
+    "split": "eval",
+    "sampling_seed": 20261022000,
+    "task_id": "navigation:44a2dfe66e2a46b0d27948b9d55a8b44b1d4ff8f464e2e38b05f6950c4286065"
+  },
+  {
+    "seed": 0,
+    "repeat": 1,
+    "split": "eval",
+    "sampling_seed": 20261022100,
+    "task_id": "navigation:44a2dfe66e2a46b0d27948b9d55a8b44b1d4ff8f464e2e38b05f6950c4286065"
+  },
+  {
+    "seed": 1,
+    "repeat": 0,
+    "split": "eval",
+    "sampling_seed": 20261022400,
+    "task_id": "navigation:e8764e6f5e91316fba6b7bae290890a11f5588ab54b135035467e126d51b3a62"
+  },
+  {
+    "seed": 1,
+    "repeat": 1,
+    "split": "eval",
+    "sampling_seed": 20261022500,
+    "task_id": "navigation:e8764e6f5e91316fba6b7bae290890a11f5588ab54b135035467e126d51b3a62"
+  },
+  {
+    "seed": 2,
+    "repeat": 0,
+    "split": "eval",
+    "sampling_seed": 20261022800,
+    "task_id": "navigation:3443433fda2657f2b067407ee77ccbdf388775a0d4a0894acef8e1419dc899c0"
+  },
+  {
+    "seed": 2,
+    "repeat": 1,
+    "split": "eval",
+    "sampling_seed": 20261022900,
+    "task_id": "navigation:3443433fda2657f2b067407ee77ccbdf388775a0d4a0894acef8e1419dc899c0"
+  },
+  {
+    "seed": 3,
+    "repeat": 0,
+    "split": "eval",
+    "sampling_seed": 20261023200,
+    "task_id": "navigation:37e8662a0d635336c3f63b44c28db8733d8e44bad9f9103796d3605d6e13257d"
+  },
+  {
+    "seed": 3,
+    "repeat": 1,
+    "split": "eval",
+    "sampling_seed": 20261023300,
+    "task_id": "navigation:37e8662a0d635336c3f63b44c28db8733d8e44bad9f9103796d3605d6e13257d"
+  },
+  {
+    "seed": 4,
+    "repeat": 0,
+    "split": "eval",
+    "sampling_seed": 20261023600,
+    "task_id": "navigation:98940ddb9b8d8431ad70eff54a194fefab51170d467fd1287475b8a5a2935127"
+  },
+  {
+    "seed": 4,
+    "repeat": 1,
+    "split": "eval",
+    "sampling_seed": 20261023700,
+    "task_id": "navigation:98940ddb9b8d8431ad70eff54a194fefab51170d467fd1287475b8a5a2935127"
+  },
+  {
+    "seed": 5,
+    "repeat": 0,
+    "split": "eval",
+    "sampling_seed": 20261024000,
+    "task_id": "navigation:23361da30716dbbdb5a4dba64b3709441ebf8f07927614a8e71464d5cc25964c"
+  },
+  {
+    "seed": 5,
+    "repeat": 1,
+    "split": "eval",
+    "sampling_seed": 20261024100,
+    "task_id": "navigation:23361da30716dbbdb5a4dba64b3709441ebf8f07927614a8e71464d5cc25964c"
+  },
+  {
+    "seed": 6,
+    "repeat": 0,
+    "split": "eval",
+    "sampling_seed": 20261024400,
+    "task_id": "navigation:14ef25aa2fbf63a2ec27efb06568585a3f819d25fc542e335d250f901c7181f0"
+  },
+  {
+    "seed": 6,
+    "repeat": 1,
+    "split": "eval",
+    "sampling_seed": 20261024500,
+    "task_id": "navigation:14ef25aa2fbf63a2ec27efb06568585a3f819d25fc542e335d250f901c7181f0"
+  },
+  {
+    "seed": 7,
+    "repeat": 0,
+    "split": "eval",
+    "sampling_seed": 20261024800,
+    "task_id": "navigation:117f9178ccd97775ec706434c560fa43144a460f57cc27102219b26a59ab55ea"
+  },
+  {
+    "seed": 7,
+    "repeat": 1,
+    "split": "eval",
+    "sampling_seed": 20261024900,
+    "task_id": "navigation:117f9178ccd97775ec706434c560fa43144a460f57cc27102219b26a59ab55ea"
+  },
+  {
+    "seed": 8,
+    "repeat": 0,
+    "split": "eval",
+    "sampling_seed": 20261025200,
+    "task_id": "navigation:9b2745d2e333d1eea053821c0422ef1e87e8ade86f9b03679d0ae6897c69056d"
+  },
+  {
+    "seed": 8,
+    "repeat": 1,
+    "split": "eval",
+    "sampling_seed": 20261025300,
+    "task_id": "navigation:9b2745d2e333d1eea053821c0422ef1e87e8ade86f9b03679d0ae6897c69056d"
+  },
+  {
+    "seed": 9,
+    "repeat": 0,
+    "split": "eval",
+    "sampling_seed": 20261025600,
+    "task_id": "navigation:6265187573b4bba5d31058f554ed19bfbb7b667a354c2b5448addc2bbe233d68"
+  },
+  {
+    "seed": 9,
+    "repeat": 1,
+    "split": "eval",
+    "sampling_seed": 20261025700,
+    "task_id": "navigation:6265187573b4bba5d31058f554ed19bfbb7b667a354c2b5448addc2bbe233d68"
+  },
+  {
+    "seed": 10,
+    "repeat": 0,
+    "split": "eval",
+    "sampling_seed": 20261026000,
+    "task_id": "navigation:09824f7ba56e839c82b706f4ade9edeccf0f26aa8c76b3c6645810987af60b52"
+  },
+  {
+    "seed": 10,
+    "repeat": 1,
+    "split": "eval",
+    "sampling_seed": 20261026100,
+    "task_id": "navigation:09824f7ba56e839c82b706f4ade9edeccf0f26aa8c76b3c6645810987af60b52"
+  },
+  {
+    "seed": 20,
+    "repeat": 0,
+    "split": "eval",
+    "sampling_seed": 20261030000,
+    "task_id": "navigation:3cb573746c4c320cedd11321dbd6b94b116202f2ec2fd85ad5e93fd29acacf9a"
+  },
+  {
+    "seed": 20,
+    "repeat": 1,
+    "split": "eval",
+    "sampling_seed": 20261030100,
+    "task_id": "navigation:3cb573746c4c320cedd11321dbd6b94b116202f2ec2fd85ad5e93fd29acacf9a"
+  },
+  {
+    "seed": 21,
+    "repeat": 0,
+    "split": "eval",
+    "sampling_seed": 20261030400,
+    "task_id": "navigation:30fcb2e77792298e3b7774503490edf08162eb6bbc95071dba2714eac019f622"
+  },
+  {
+    "seed": 21,
+    "repeat": 1,
+    "split": "eval",
+    "sampling_seed": 20261030500,
+    "task_id": "navigation:30fcb2e77792298e3b7774503490edf08162eb6bbc95071dba2714eac019f622"
+  },
+  {
+    "seed": 22,
+    "repeat": 0,
+    "split": "eval",
+    "sampling_seed": 20261030800,
+    "task_id": "navigation:28a223992d5f389520990a0981af3ab785caeb6a67902ff44c2aec9b0ee31c7e"
+  },
+  {
+    "seed": 22,
+    "repeat": 1,
+    "split": "eval",
+    "sampling_seed": 20261030900,
+    "task_id": "navigation:28a223992d5f389520990a0981af3ab785caeb6a67902ff44c2aec9b0ee31c7e"
+  },
+  {
+    "seed": 23,
+    "repeat": 0,
+    "split": "eval",
+    "sampling_seed": 20261031200,
+    "task_id": "navigation:6ed436e29e0eb44e7139b039b05f125bdadb691f3807f9c4f015c7e1dc97057a"
+  },
+  {
+    "seed": 23,
+    "repeat": 1,
+    "split": "eval",
+    "sampling_seed": 20261031300,
+    "task_id": "navigation:6ed436e29e0eb44e7139b039b05f125bdadb691f3807f9c4f015c7e1dc97057a"
+  },
+  {
+    "seed": 24,
+    "repeat": 0,
+    "split": "eval",
+    "sampling_seed": 20261031600,
+    "task_id": "navigation:97a6db31fe5bd117583a4796f57f51fbc15c09dfa44f1472e68a1a8dda3094e2"
+  },
+  {
+    "seed": 24,
+    "repeat": 1,
+    "split": "eval",
+    "sampling_seed": 20261031700,
+    "task_id": "navigation:97a6db31fe5bd117583a4796f57f51fbc15c09dfa44f1472e68a1a8dda3094e2"
+  }
+]

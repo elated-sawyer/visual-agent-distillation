@@ -1,0 +1,34 @@
+{
+  "schema": "sokoban-protocol-v1",
+  "history": "full",
+  "max_turns": 5,
+  "env_config": {
+    "dim_room": [
+      6,
+      6
+    ],
+    "max_steps": 100,
+    "num_boxes": 1,
+    "render_mode": "vision",
+    "max_actions_per_step": 3,
+    "action_sep": ",",
+    "image_placeholder": "<image>",
+    "use_example_in_sys_prompt": true,
+    "min_solution_steps": [
+      1,
+      5
+    ],
+    "reset_seed_max_tries": 10000,
+    "min_solution_bfs_max_depth": 200,
+    "map_partition_modulus": 4,
+    "map_partition_eval_bucket": 0,
+    "prompt_format": "wm_think",
+    "strict_format": true,
+    "format_reward": 0.02,
+    "success_reward": 1.0
+  },
+  "upstream": {
+    "name": "VAGEN",
+    "commit": "e34bbcee3c48f03833270550151eb6646267fa3b"
+  }
+}

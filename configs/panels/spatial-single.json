@@ -1,0 +1,562 @@
+[
+  {
+    "seed": 0,
+    "repeat": 0,
+    "task_id": "spatial:1-room:5299760c9d15:857e80bce1996924ef25000650d34f398b6b7b195c708bcb4db34ed51de6fb97",
+    "split": "train",
+    "sampling_seed": 20261020
+  },
+  {
+    "seed": 0,
+    "repeat": 1,
+    "task_id": "spatial:1-room:5299760c9d15:857e80bce1996924ef25000650d34f398b6b7b195c708bcb4db34ed51de6fb97",
+    "split": "train",
+    "sampling_seed": 20271020
+  },
+  {
+    "seed": 0,
+    "repeat": 2,
+    "task_id": "spatial:1-room:5299760c9d15:857e80bce1996924ef25000650d34f398b6b7b195c708bcb4db34ed51de6fb97",
+    "split": "train",
+    "sampling_seed": 20281020
+  },
+  {
+    "seed": 0,
+    "repeat": 3,
+    "task_id": "spatial:1-room:5299760c9d15:857e80bce1996924ef25000650d34f398b6b7b195c708bcb4db34ed51de6fb97",
+    "split": "train",
+    "sampling_seed": 20291020
+  },
+  {
+    "seed": 1,
+    "repeat": 0,
+    "task_id": "spatial:1-room:5299760c9d15:1db78757204a437bcf3e781041bde6ae011992048d41ff8959b0da15f6d465a0",
+    "split": "train",
+    "sampling_seed": 20261120
+  },
+  {
+    "seed": 1,
+    "repeat": 1,
+    "task_id": "spatial:1-room:5299760c9d15:1db78757204a437bcf3e781041bde6ae011992048d41ff8959b0da15f6d465a0",
+    "split": "train",
+    "sampling_seed": 20271120
+  },
+  {
+    "seed": 1,
+    "repeat": 2,
+    "task_id": "spatial:1-room:5299760c9d15:1db78757204a437bcf3e781041bde6ae011992048d41ff8959b0da15f6d465a0",
+    "split": "train",
+    "sampling_seed": 20281120
+  },
+  {
+    "seed": 1,
+    "repeat": 3,
+    "task_id": "spatial:1-room:5299760c9d15:1db78757204a437bcf3e781041bde6ae011992048d41ff8959b0da15f6d465a0",
+    "split": "train",
+    "sampling_seed": 20291120
+  },
+  {
+    "seed": 2,
+    "repeat": 0,
+    "task_id": "spatial:1-room:5299760c9d15:282af778015d0ea21ca112eacec81f59916fc97a31fd088ef787bc8fce607e0e",
+    "split": "train",
+    "sampling_seed": 20261220
+  },
+  {
+    "seed": 2,
+    "repeat": 1,
+    "task_id": "spatial:1-room:5299760c9d15:282af778015d0ea21ca112eacec81f59916fc97a31fd088ef787bc8fce607e0e",
+    "split": "train",
+    "sampling_seed": 20271220
+  },
+  {
+    "seed": 2,
+    "repeat": 2,
+    "task_id": "spatial:1-room:5299760c9d15:282af778015d0ea21ca112eacec81f59916fc97a31fd088ef787bc8fce607e0e",
+    "split": "train",
+    "sampling_seed": 20281220
+  },
+  {
+    "seed": 2,
+    "repeat": 3,
+    "task_id": "spatial:1-room:5299760c9d15:282af778015d0ea21ca112eacec81f59916fc97a31fd088ef787bc8fce607e0e",
+    "split": "train",
+    "sampling_seed": 20291220
+  },
+  {
+    "seed": 3,
+    "repeat": 0,
+    "task_id": "spatial:1-room:5299760c9d15:fb15ba7c78c8b02d48622eb9231395f40e01ba694a01c2b88c27a2eacc518549",
+    "split": "train",
+    "sampling_seed": 20261320
+  },
+  {
+    "seed": 3,
+    "repeat": 1,
+    "task_id": "spatial:1-room:5299760c9d15:fb15ba7c78c8b02d48622eb9231395f40e01ba694a01c2b88c27a2eacc518549",
+    "split": "train",
+    "sampling_seed": 20271320
+  },
+  {
+    "seed": 3,
+    "repeat": 2,
+    "task_id": "spatial:1-room:5299760c9d15:fb15ba7c78c8b02d48622eb9231395f40e01ba694a01c2b88c27a2eacc518549",
+    "split": "train",
+    "sampling_seed": 20281320
+  },
+  {
+    "seed": 3,
+    "repeat": 3,
+    "task_id": "spatial:1-room:5299760c9d15:fb15ba7c78c8b02d48622eb9231395f40e01ba694a01c2b88c27a2eacc518549",
+    "split": "train",
+    "sampling_seed": 20291320
+  },
+  {
+    "seed": 4,
+    "repeat": 0,
+    "task_id": "spatial:1-room:5299760c9d15:50ec7d7ec1199bd0704e4422fc3fd47d7c8a0701f776dcb47aa4510aa0473e77",
+    "split": "train",
+    "sampling_seed": 20261420
+  },
+  {
+    "seed": 4,
+    "repeat": 1,
+    "task_id": "spatial:1-room:5299760c9d15:50ec7d7ec1199bd0704e4422fc3fd47d7c8a0701f776dcb47aa4510aa0473e77",
+    "split": "train",
+    "sampling_seed": 20271420
+  },
+  {
+    "seed": 4,
+    "repeat": 2,
+    "task_id": "spatial:1-room:5299760c9d15:50ec7d7ec1199bd0704e4422fc3fd47d7c8a0701f776dcb47aa4510aa0473e77",
+    "split": "train",
+    "sampling_seed": 20281420
+  },
+  {
+    "seed": 4,
+    "repeat": 3,
+    "task_id": "spatial:1-room:5299760c9d15:50ec7d7ec1199bd0704e4422fc3fd47d7c8a0701f776dcb47aa4510aa0473e77",
+    "split": "train",
+    "sampling_seed": 20291420
+  },
+  {
+    "seed": 5,
+    "repeat": 0,
+    "task_id": "spatial:1-room:5299760c9d15:dc1bb37385418ac273be68526847455b859f9c9dd256f83b6c6a2b6af28e674e",
+    "split": "train",
+    "sampling_seed": 20261520
+  },
+  {
+    "seed": 5,
+    "repeat": 1,
+    "task_id": "spatial:1-room:5299760c9d15:dc1bb37385418ac273be68526847455b859f9c9dd256f83b6c6a2b6af28e674e",
+    "split": "train",
+    "sampling_seed": 20271520
+  },
+  {
+    "seed": 5,
+    "repeat": 2,
+    "task_id": "spatial:1-room:5299760c9d15:dc1bb37385418ac273be68526847455b859f9c9dd256f83b6c6a2b6af28e674e",
+    "split": "train",
+    "sampling_seed": 20281520
+  },
+  {
+    "seed": 5,
+    "repeat": 3,
+    "task_id": "spatial:1-room:5299760c9d15:dc1bb37385418ac273be68526847455b859f9c9dd256f83b6c6a2b6af28e674e",
+    "split": "train",
+    "sampling_seed": 20291520
+  },
+  {
+    "seed": 6,
+    "repeat": 0,
+    "task_id": "spatial:1-room:5299760c9d15:dcedbacb885e530129773f1a1fd7510dca6052ef0b85e524f829c678f1c253cd",
+    "split": "train",
+    "sampling_seed": 20261620
+  },
+  {
+    "seed": 6,
+    "repeat": 1,
+    "task_id": "spatial:1-room:5299760c9d15:dcedbacb885e530129773f1a1fd7510dca6052ef0b85e524f829c678f1c253cd",
+    "split": "train",
+    "sampling_seed": 20271620
+  },
+  {
+    "seed": 6,
+    "repeat": 2,
+    "task_id": "spatial:1-room:5299760c9d15:dcedbacb885e530129773f1a1fd7510dca6052ef0b85e524f829c678f1c253cd",
+    "split": "train",
+    "sampling_seed": 20281620
+  },
+  {
+    "seed": 6,
+    "repeat": 3,
+    "task_id": "spatial:1-room:5299760c9d15:dcedbacb885e530129773f1a1fd7510dca6052ef0b85e524f829c678f1c253cd",
+    "split": "train",
+    "sampling_seed": 20291620
+  },
+  {
+    "seed": 7,
+    "repeat": 0,
+    "task_id": "spatial:1-room:5299760c9d15:4d03c7244c4e0d8448c0a0faccd649f212c6dda5d826c4d6b8bd4fab884b33d1",
+    "split": "train",
+    "sampling_seed": 20261720
+  },
+  {
+    "seed": 7,
+    "repeat": 1,
+    "task_id": "spatial:1-room:5299760c9d15:4d03c7244c4e0d8448c0a0faccd649f212c6dda5d826c4d6b8bd4fab884b33d1",
+    "split": "train",
+    "sampling_seed": 20271720
+  },
+  {
+    "seed": 7,
+    "repeat": 2,
+    "task_id": "spatial:1-room:5299760c9d15:4d03c7244c4e0d8448c0a0faccd649f212c6dda5d826c4d6b8bd4fab884b33d1",
+    "split": "train",
+    "sampling_seed": 20281720
+  },
+  {
+    "seed": 7,
+    "repeat": 3,
+    "task_id": "spatial:1-room:5299760c9d15:4d03c7244c4e0d8448c0a0faccd649f212c6dda5d826c4d6b8bd4fab884b33d1",
+    "split": "train",
+    "sampling_seed": 20291720
+  },
+  {
+    "seed": 8,
+    "repeat": 0,
+    "task_id": "spatial:1-room:5299760c9d15:63b9d97b712e69d299f4c280e73bcaeecc037d84249d7a3996f87e0960cba56e",
+    "split": "train",
+    "sampling_seed": 20261820
+  },
+  {
+    "seed": 8,
+    "repeat": 1,
+    "task_id": "spatial:1-room:5299760c9d15:63b9d97b712e69d299f4c280e73bcaeecc037d84249d7a3996f87e0960cba56e",
+    "split": "train",
+    "sampling_seed": 20271820
+  },
+  {
+    "seed": 8,
+    "repeat": 2,
+    "task_id": "spatial:1-room:5299760c9d15:63b9d97b712e69d299f4c280e73bcaeecc037d84249d7a3996f87e0960cba56e",
+    "split": "train",
+    "sampling_seed": 20281820
+  },
+  {
+    "seed": 8,
+    "repeat": 3,
+    "task_id": "spatial:1-room:5299760c9d15:63b9d97b712e69d299f4c280e73bcaeecc037d84249d7a3996f87e0960cba56e",
+    "split": "train",
+    "sampling_seed": 20291820
+  },
+  {
+    "seed": 9,
+    "repeat": 0,
+    "task_id": "spatial:1-room:5299760c9d15:5167cacf530ace05ded2dda08723df0139b5cf33a1f13895c76a57f09af28ba0",
+    "split": "train",
+    "sampling_seed": 20261920
+  },
+  {
+    "seed": 9,
+    "repeat": 1,
+    "task_id": "spatial:1-room:5299760c9d15:5167cacf530ace05ded2dda08723df0139b5cf33a1f13895c76a57f09af28ba0",
+    "split": "train",
+    "sampling_seed": 20271920
+  },
+  {
+    "seed": 9,
+    "repeat": 2,
+    "task_id": "spatial:1-room:5299760c9d15:5167cacf530ace05ded2dda08723df0139b5cf33a1f13895c76a57f09af28ba0",
+    "split": "train",
+    "sampling_seed": 20281920
+  },
+  {
+    "seed": 9,
+    "repeat": 3,
+    "task_id": "spatial:1-room:5299760c9d15:5167cacf530ace05ded2dda08723df0139b5cf33a1f13895c76a57f09af28ba0",
+    "split": "train",
+    "sampling_seed": 20291920
+  },
+  {
+    "seed": 10,
+    "repeat": 0,
+    "task_id": "spatial:1-room:5299760c9d15:0da932068e56befa0d90c27e0661240e7cc1283bae81ff280d81106857d04a75",
+    "split": "train",
+    "sampling_seed": 20262020
+  },
+  {
+    "seed": 10,
+    "repeat": 1,
+    "task_id": "spatial:1-room:5299760c9d15:0da932068e56befa0d90c27e0661240e7cc1283bae81ff280d81106857d04a75",
+    "split": "train",
+    "sampling_seed": 20272020
+  },
+  {
+    "seed": 10,
+    "repeat": 2,
+    "task_id": "spatial:1-room:5299760c9d15:0da932068e56befa0d90c27e0661240e7cc1283bae81ff280d81106857d04a75",
+    "split": "train",
+    "sampling_seed": 20282020
+  },
+  {
+    "seed": 10,
+    "repeat": 3,
+    "task_id": "spatial:1-room:5299760c9d15:0da932068e56befa0d90c27e0661240e7cc1283bae81ff280d81106857d04a75",
+    "split": "train",
+    "sampling_seed": 20292020
+  },
+  {
+    "seed": 11,
+    "repeat": 0,
+    "task_id": "spatial:1-room:5299760c9d15:a0124b77563556bde2248684cdea63fa5b15ee95bbdaa0639829d703206b533a",
+    "split": "train",
+    "sampling_seed": 20262120
+  },
+  {
+    "seed": 11,
+    "repeat": 1,
+    "task_id": "spatial:1-room:5299760c9d15:a0124b77563556bde2248684cdea63fa5b15ee95bbdaa0639829d703206b533a",
+    "split": "train",
+    "sampling_seed": 20272120
+  },
+  {
+    "seed": 11,
+    "repeat": 2,
+    "task_id": "spatial:1-room:5299760c9d15:a0124b77563556bde2248684cdea63fa5b15ee95bbdaa0639829d703206b533a",
+    "split": "train",
+    "sampling_seed": 20282120
+  },
+  {
+    "seed": 11,
+    "repeat": 3,
+    "task_id": "spatial:1-room:5299760c9d15:a0124b77563556bde2248684cdea63fa5b15ee95bbdaa0639829d703206b533a",
+    "split": "train",
+    "sampling_seed": 20292120
+  },
+  {
+    "seed": 12,
+    "repeat": 0,
+    "task_id": "spatial:1-room:5299760c9d15:704d3ad5c9d0ca2e0d0a059cce3bb34393efddeb15d8db17b2b528d61965d012",
+    "split": "train",
+    "sampling_seed": 20262220
+  },
+  {
+    "seed": 12,
+    "repeat": 1,
+    "task_id": "spatial:1-room:5299760c9d15:704d3ad5c9d0ca2e0d0a059cce3bb34393efddeb15d8db17b2b528d61965d012",
+    "split": "train",
+    "sampling_seed": 20272220
+  },
+  {
+    "seed": 12,
+    "repeat": 2,
+    "task_id": "spatial:1-room:5299760c9d15:704d3ad5c9d0ca2e0d0a059cce3bb34393efddeb15d8db17b2b528d61965d012",
+    "split": "train",
+    "sampling_seed": 20282220
+  },
+  {
+    "seed": 12,
+    "repeat": 3,
+    "task_id": "spatial:1-room:5299760c9d15:704d3ad5c9d0ca2e0d0a059cce3bb34393efddeb15d8db17b2b528d61965d012",
+    "split": "train",
+    "sampling_seed": 20292220
+  },
+  {
+    "seed": 13,
+    "repeat": 0,
+    "task_id": "spatial:1-room:5299760c9d15:1f0a950ffb8d0c852b3f58460cca117683cc597c8a547eb883bcc37bc916ffb9",
+    "split": "train",
+    "sampling_seed": 20262320
+  },
+  {
+    "seed": 13,
+    "repeat": 1,
+    "task_id": "spatial:1-room:5299760c9d15:1f0a950ffb8d0c852b3f58460cca117683cc597c8a547eb883bcc37bc916ffb9",
+    "split": "train",
+    "sampling_seed": 20272320
+  },
+  {
+    "seed": 13,
+    "repeat": 2,
+    "task_id": "spatial:1-room:5299760c9d15:1f0a950ffb8d0c852b3f58460cca117683cc597c8a547eb883bcc37bc916ffb9",
+    "split": "train",
+    "sampling_seed": 20282320
+  },
+  {
+    "seed": 13,
+    "repeat": 3,
+    "task_id": "spatial:1-room:5299760c9d15:1f0a950ffb8d0c852b3f58460cca117683cc597c8a547eb883bcc37bc916ffb9",
+    "split": "train",
+    "sampling_seed": 20292320
+  },
+  {
+    "seed": 14,
+    "repeat": 0,
+    "task_id": "spatial:1-room:5299760c9d15:30a4ec07bab823f91a42b4537aee9d6d7d9d5aa1072b726a02d37d20e57e2a04",
+    "split": "train",
+    "sampling_seed": 20262420
+  },
+  {
+    "seed": 14,
+    "repeat": 1,
+    "task_id": "spatial:1-room:5299760c9d15:30a4ec07bab823f91a42b4537aee9d6d7d9d5aa1072b726a02d37d20e57e2a04",
+    "split": "train",
+    "sampling_seed": 20272420
+  },
+  {
+    "seed": 14,
+    "repeat": 2,
+    "task_id": "spatial:1-room:5299760c9d15:30a4ec07bab823f91a42b4537aee9d6d7d9d5aa1072b726a02d37d20e57e2a04",
+    "split": "train",
+    "sampling_seed": 20282420
+  },
+  {
+    "seed": 14,
+    "repeat": 3,
+    "task_id": "spatial:1-room:5299760c9d15:30a4ec07bab823f91a42b4537aee9d6d7d9d5aa1072b726a02d37d20e57e2a04",
+    "split": "train",
+    "sampling_seed": 20292420
+  },
+  {
+    "seed": 15,
+    "repeat": 0,
+    "task_id": "spatial:1-room:5299760c9d15:1877504ff8bb97786833781a23b4ef8c8c8461e0feff4a6e2f44da5a927e2ea9",
+    "split": "train",
+    "sampling_seed": 20262520
+  },
+  {
+    "seed": 15,
+    "repeat": 1,
+    "task_id": "spatial:1-room:5299760c9d15:1877504ff8bb97786833781a23b4ef8c8c8461e0feff4a6e2f44da5a927e2ea9",
+    "split": "train",
+    "sampling_seed": 20272520
+  },
+  {
+    "seed": 15,
+    "repeat": 2,
+    "task_id": "spatial:1-room:5299760c9d15:1877504ff8bb97786833781a23b4ef8c8c8461e0feff4a6e2f44da5a927e2ea9",
+    "split": "train",
+    "sampling_seed": 20282520
+  },
+  {
+    "seed": 15,
+    "repeat": 3,
+    "task_id": "spatial:1-room:5299760c9d15:1877504ff8bb97786833781a23b4ef8c8c8461e0feff4a6e2f44da5a927e2ea9",
+    "split": "train",
+    "sampling_seed": 20292520
+  },
+  {
+    "seed": 16,
+    "repeat": 0,
+    "task_id": "spatial:1-room:5299760c9d15:fa9c89d64a60059eb87db7a1c65a9ab6c6860970f00c11e4516c175d2d07cbaf",
+    "split": "eval",
+    "sampling_seed": 20262620
+  },
+  {
+    "seed": 16,
+    "repeat": 1,
+    "task_id": "spatial:1-room:5299760c9d15:fa9c89d64a60059eb87db7a1c65a9ab6c6860970f00c11e4516c175d2d07cbaf",
+    "split": "eval",
+    "sampling_seed": 20272620
+  },
+  {
+    "seed": 16,
+    "repeat": 2,
+    "task_id": "spatial:1-room:5299760c9d15:fa9c89d64a60059eb87db7a1c65a9ab6c6860970f00c11e4516c175d2d07cbaf",
+    "split": "eval",
+    "sampling_seed": 20282620
+  },
+  {
+    "seed": 16,
+    "repeat": 3,
+    "task_id": "spatial:1-room:5299760c9d15:fa9c89d64a60059eb87db7a1c65a9ab6c6860970f00c11e4516c175d2d07cbaf",
+    "split": "eval",
+    "sampling_seed": 20292620
+  },
+  {
+    "seed": 17,
+    "repeat": 0,
+    "task_id": "spatial:1-room:5299760c9d15:2dd04fcc84fe6beb73ae58df5ea60e8d3fdb3fff98ccb92f530af003a24f5297",
+    "split": "eval",
+    "sampling_seed": 20262720
+  },
+  {
+    "seed": 17,
+    "repeat": 1,
+    "task_id": "spatial:1-room:5299760c9d15:2dd04fcc84fe6beb73ae58df5ea60e8d3fdb3fff98ccb92f530af003a24f5297",
+    "split": "eval",
+    "sampling_seed": 20272720
+  },
+  {
+    "seed": 17,
+    "repeat": 2,
+    "task_id": "spatial:1-room:5299760c9d15:2dd04fcc84fe6beb73ae58df5ea60e8d3fdb3fff98ccb92f530af003a24f5297",
+    "split": "eval",
+    "sampling_seed": 20282720
+  },
+  {
+    "seed": 17,
+    "repeat": 3,
+    "task_id": "spatial:1-room:5299760c9d15:2dd04fcc84fe6beb73ae58df5ea60e8d3fdb3fff98ccb92f530af003a24f5297",
+    "split": "eval",
+    "sampling_seed": 20292720
+  },
+  {
+    "seed": 18,
+    "repeat": 0,
+    "task_id": "spatial:1-room:5299760c9d15:58ac9752cd376b5146b0bc2bb41f91a3537e11c4dee09c5148f166f06c6034b4",
+    "split": "eval",
+    "sampling_seed": 20262820
+  },
+  {
+    "seed": 18,
+    "repeat": 1,
+    "task_id": "spatial:1-room:5299760c9d15:58ac9752cd376b5146b0bc2bb41f91a3537e11c4dee09c5148f166f06c6034b4",
+    "split": "eval",
+    "sampling_seed": 20272820
+  },
+  {
+    "seed": 18,
+    "repeat": 2,
+    "task_id": "spatial:1-room:5299760c9d15:58ac9752cd376b5146b0bc2bb41f91a3537e11c4dee09c5148f166f06c6034b4",
+    "split": "eval",
+    "sampling_seed": 20282820
+  },
+  {
+    "seed": 18,
+    "repeat": 3,
+    "task_id": "spatial:1-room:5299760c9d15:58ac9752cd376b5146b0bc2bb41f91a3537e11c4dee09c5148f166f06c6034b4",
+    "split": "eval",
+    "sampling_seed": 20292820
+  },
+  {
+    "seed": 19,
+    "repeat": 0,
+    "task_id": "spatial:1-room:5299760c9d15:559fbbe5365d82fd33d26201e26b68fbf69cf242bb049d171e74b375c99296ff",
+    "split": "eval",
+    "sampling_seed": 20262920
+  },
+  {
+    "seed": 19,
+    "repeat": 1,
+    "task_id": "spatial:1-room:5299760c9d15:559fbbe5365d82fd33d26201e26b68fbf69cf242bb049d171e74b375c99296ff",
+    "split": "eval",
+    "sampling_seed": 20272920
+  },
+  {
+    "seed": 19,
+    "repeat": 2,
+    "task_id": "spatial:1-room:5299760c9d15:559fbbe5365d82fd33d26201e26b68fbf69cf242bb049d171e74b375c99296ff",
+    "split": "eval",
+    "sampling_seed": 20282920
+  },
+  {
+    "seed": 19,
+    "repeat": 3,
+    "task_id": "spatial:1-room:5299760c9d15:559fbbe5365d82fd33d26201e26b68fbf69cf242bb049d171e74b375c99296ff",
+    "split": "eval",
+    "sampling_seed": 20292920
+  }
+]

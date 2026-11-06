@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=65"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mosaic-distill"
+version = "0.2.0"
+description = "Multimodal trajectory replay, distillation and evaluation"
+requires-python = ">=3.10"
+dependencies = ["Pillow>=10", "requests>=2.31"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+plots = ["matplotlib>=3.8"]
+
+[tool.setuptools.packages.find]
+include = ["mosaic_distill*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "training", "scripts"]

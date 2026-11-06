@@ -1,0 +1,51 @@
+{
+  "schema": "navigation-protocol-v1",
+  "history": "full",
+  "max_turns": 30,
+  "upstream": {
+    "name": "VAGEN",
+    "commit": "e34bbcee3c48f03833270550151eb6646267fa3b"
+  },
+  "datasets": {
+    "train": {
+      "name": "base_train",
+      "sha256": "eb0aa69186604cedc6dc6c2a8874393beae09b7ac1dadae5458e87492b5e01e9",
+      "tasks": 1200
+    },
+    "eval": {
+      "name": "long_horizon",
+      "sha256": "ff23dcb171ff8008721a8a74ee7c677f6535f84c25407715326a8b313771bdaf",
+      "tasks": 60
+    }
+  },
+  "env_config": {
+    "resolution": 255,
+    "fov": 100,
+    "multiview": false,
+    "down_sample_ratio": 1.0,
+    "max_actions_per_step": 5,
+    "action_sep": "|",
+    "max_steps": 30,
+    "format_reward": 0.0,
+    "per_turn_format_reward": 0.01,
+    "success_reward": 1.0,
+    "prompt_format": "free_think",
+    "example_count": 0,
+    "success_threshold": 1.0,
+    "step_length": 0.3,
+    "image_placeholder": "<image>"
+  },
+  "runtime": {
+    "root": "vendor/navigation/ai2thor",
+    "ai2thor_version": "5.0.0",
+    "build_commit": "f0825767cd50d69f666c7f282e54abfe58f1e917"
+  },
+  "generation": {
+    "enable_thinking": true,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "top_k": -1,
+    "max_new_tokens": 32768,
+    "max_context_tokens": 262136
+  }
+}
