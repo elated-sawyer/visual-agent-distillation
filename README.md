@@ -10,6 +10,10 @@ With **four selected trajectories per environment**, our Qwen3.5-4B student reac
 
 > **Release scope:** the code starts from an already selected set of trajectories. Environment adapters, collection, prefix preparation, offline OPD, matched SFT, online OPD, and evaluation are included. The trajectory-selection front end is not released; its precomputed example annotations and choices are available to inspect.
 
+![Paper Figure 1: representative trajectory selection, results across trajectory budgets, and task-level transfer in Navigation, Sokoban, and SpatialGym.](assets/figures/teaser.png)
+
+**Figure 1 — Four selected trajectories, broad task transfer.** Reproduced from the paper. The selected-data results are compared with the original student, teacher, and online OPD. Axes are zoomed and trajectory budgets are categorical. Task improvements use four-repeat task means. Results use one training seed; K1/K16 and random-subset endpoints are collaborator-reported. Click the image to view it at full resolution.
+
 ## Results
 
 All adapted models below use **100 updates × 64 responses**, with the final model evaluated at **update 100**. The student is **Qwen3.5-4B** and the frozen teacher is **Qwen3.5-27B**. Each evaluation task is repeated four times.
@@ -36,28 +40,11 @@ Source: [full-precision results](results/main.json), [five-update monitoring cur
 
 ### From representative histories to fresh supervision
 
-```mermaid
-flowchart TB
-    A["Training-only candidate trajectories"] --> B["Representative trajectory selection"]
-    B --> C["K complete trajectories"]
-    C --> D["Original visual prefixes"]
-    D --> E["Fresh student response + teacher token scores"]
-    D --> F["Teacher-generated response"]
-    E --> G["OPD student update"]
-    F --> H["Matched SFT student update"]
-    G --> I["Evaluate through new environment interactions"]
-    H --> I
-    classDef withheld fill:#F2F2F2,stroke:#94999F,stroke-dasharray:5 5,color:#222;
-    classDef data fill:#E4EFF7,stroke:#90B7D4,color:#222;
-    classDef opd fill:#E6F1EF,stroke:#5F9F9B,color:#222;
-    classDef sft fill:#FFF0E1,stroke:#E6AD75,color:#222;
-    class B withheld;
-    class A,C,D data;
-    class E,G opd;
-    class F,H sft;
-```
+![Paper Figure 2: collect candidate trajectories, describe and select representative histories, reuse original multimodal prefixes, and train with OPD or matched SFT before environment evaluation.](assets/figures/method.png)
 
-The dashed node is the unreleased selection front end. In the full method, selection combines skill–context coverage with ordered visual decision similarity. The released code accepts its output as an explicit list of trajectory files.
+**Figure 2 — Representative trajectory selection and distillation.** Reproduced from the paper. Both training branches consume the same original causal prefixes: OPD resamples student responses and obtains teacher token scores; SFT learns teacher-generated responses. Skill and visual-decision annotations are used only for selection. Observation grids and descriptions in the diagram are schematic examples.
+
+The figure shows the complete research method. Its **“Describe and select” stage is not included in this code release**; the released training code accepts already selected trajectories as an explicit file list. In the full method, selection combines skill–context coverage with ordered visual decision similarity.
 
 1. **Keep complete histories.** Stored student trajectories preserve the observations, images, original responses, and unsuccessful actions. Task failure alone does not exclude a trajectory.
 2. **Extract causal prefixes.** A prefix ends at the current observation. Earlier responses and thinking remain; the current response, future observations, and final outcome are excluded.
@@ -200,6 +187,7 @@ The default OPD launcher requests **8 actor GPUs + 4 rollout GPUs**, plus **2 se
 configs/               Training recipes, model revisions, environment protocols
   panels/              Frozen task, seed, and repeat lists
   evaluations/         Live monitoring and final evaluation schedules
+assets/figures/        Original paper Figures 1 and 2, reused without redrawing
 data/                  Compact trajectory examples and precomputed annotations
 examples/              Human-readable trajectory walkthroughs
 images/                Original observation images for the released examples
