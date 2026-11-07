@@ -10,9 +10,9 @@ With **four selected trajectories per environment**, our Qwen3.5-4B student reac
 
 > **Release scope:** the code starts from an already selected set of trajectories. Environment adapters, collection, prefix preparation, offline OPD, matched SFT, online OPD, and evaluation are included. The trajectory-selection front end is not released; its precomputed example annotations and choices are available to inspect.
 
-![Paper Figure 1: representative trajectory selection and transfer in Navigation, Sokoban, and held-out single-room SpatialGym; four trajectories recover 77.4% of the SpatialGym student–teacher gap.](assets/figures/teaser.png)
+![Paper Figure 1: full-pool versus representative-history distillation; four histories recover 91.9%, 90.3%, and 77.4% of the student–teacher gap on Navigation, Sokoban, and held-out SpatialGym rooms.](assets/figures/teaser.png)
 
-**Figure 1 — Four selected trajectories, broad task transfer.** Reproduced from the paper. K4 outperforms the mean of three random subsets on Navigation and Sokoban; the SpatialGym panel shows **held-out single-room** results and **77.4% teacher-gap recovery**. Curves retain the original student, teacher, online OPD, and larger-data comparisons. Axes are zoomed and trajectory budgets are categorical. Task improvements use four-repeat task means. Results use one training seed; K1/K16 and random-subset endpoints are collaborator-reported. Click the image to view it at full resolution.
+**Figure 1 — Few representative histories, broad task transfer.** Reproduced from the paper. Starting from the same candidate pool, full-pool and selected-history OPD use alternative training sets, each with **100 updates × 64 newly sampled responses**. Four histories recover **91.9%**, **90.3%**, and **77.4%** of the initial-student-to-teacher gap on Navigation, Sokoban, and held-out single-room SpatialGym. Curves retain K1/K4/K16/full-pool results and the teacher, online OPD, and initial-student references; SpatialGym improves further with more histories. Axes are zoomed and budgets are categorical. Task improvements use four-repeat task means. Results use one training seed; K1/K16 endpoints are collaborator-reported. Click the image to view it at full resolution.
 
 ## Results
 
