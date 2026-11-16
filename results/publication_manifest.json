@@ -1,7 +1,7 @@
 {
   "schema": "paper-code-publication-v1",
   "date": "2026-11-16",
-  "paper_revision": "ff900bb5b04a4dded742af33a2ca6f972a0fbc34",
+  "paper_revision": "fd88d328bc686a9ac49b759e45283842ba1da841",
   "title": "Distilling Visual Agents from Limited Interaction Experience",
   "selection_front_end_included": false,
   "training_runtime_changed": false,
@@ -15,7 +15,7 @@
     "paper/cvpr2027/data/student_scale_results.json": "aae8197349e5f3b2619c22398c7322ca7c46e02695afa5d69994733acbb9a67a",
     "paper/cvpr2027/figures/data_budget.png": "a5ed6ed3fde5b769bca87022bf1ceb5ea3d7c95e6880d9f023ac6ae28b7c3542",
     "paper/cvpr2027/figures/selection-case-navigation.png": "feb8cebf02c74640ba84ef1731b7802d0c0fc4292df9c2ffa4eae69ffd5b2bf9",
-    "paper/figures/method-v8.png": "39c7ef8bf1988484e9a897920975b6484c5b753b611c197a961000dd8fa26430",
+    "paper/figures/method-v8.png": "dcf9cc7bf3a5d509fd0f384de1936a45dfbda1ddd543b0f5168952a53b2d7bb8",
     "paper/figures/teaser-v3.png": "b6d0c159a5269b68e5a2ef291d06c81f69a3b15e1cfec47de706e479b589a028"
   },
   "exports": {
@@ -30,7 +30,7 @@
     "results/student_scale_results.json": "6d9d8cc3cd52b811507c75503c15bfe11cce988f1f8efc40ae4da1b14a506af9",
     "assets/figures/README.md": "a67b4f96d0bb3cf8385a34c5314c2afa983f3863c0c10d82a604e7b3fae99d5a",
     "assets/figures/data_budget.png": "a5ed6ed3fde5b769bca87022bf1ceb5ea3d7c95e6880d9f023ac6ae28b7c3542",
-    "assets/figures/method.png": "39c7ef8bf1988484e9a897920975b6484c5b753b611c197a961000dd8fa26430",
+    "assets/figures/method.png": "dcf9cc7bf3a5d509fd0f384de1936a45dfbda1ddd543b0f5168952a53b2d7bb8",
     "assets/figures/selection.png": "feb8cebf02c74640ba84ef1731b7802d0c0fc4292df9c2ffa4eae69ffd5b2bf9",
     "assets/figures/teaser.png": "b6d0c159a5269b68e5a2ef291d06c81f69a3b15e1cfec47de706e479b589a028"
   },
