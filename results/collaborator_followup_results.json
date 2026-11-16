@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "status": "accepted_collaborator_report",
+  "date": "2026-11-16",
+  "source": "Collaborator-reported aggregates; all four supplementary training repetitions retained.",
+  "protocol": {
+    "student": "Qwen3.5-4B",
+    "teacher": "Qwen3.5-27B",
+    "updates": 100,
+    "batch_size": 64,
+    "source": "reported formal protocol",
+    "raw_logs_locally_audited": false
+  },
+  "supplementary_repeats": {
+    "environment": "navigation",
+    "episodes_per_panel": 240,
+    "actual_seed_ids": null,
+    "include_original_main_run": false,
+    "runs": [
+      {
+        "repeat": 1,
+        "report_batch": "earlier",
+        "successes": {
+          "complete": {
+            "standard": 191,
+            "long": 64
+          },
+          "representativeness": {
+            "standard": 192,
+            "long": 62
+          },
+          "fixed_random": {
+            "standard": 178,
+            "long": 64
+          }
+        }
+      },
+      {
+        "repeat": 2,
+        "report_batch": "earlier",
+        "successes": {
+          "complete": {
+            "standard": 192,
+            "long": 52
+          },
+          "representativeness": {
+            "standard": 193,
+            "long": 66
+          },
+          "fixed_random": {
+            "standard": 180,
+            "long": 56
+          }
+        }
+      },
+      {
+        "repeat": 3,
+        "report_batch": "additional",
+        "successes": {
+          "complete": {
+            "standard": 199,
+            "long": 50
+          },
+          "representativeness": {
+            "standard": 192,
+            "long": 43
+          },
+          "fixed_random": {
+            "standard": 187,
+            "long": 38
+          }
+        }
+      },
+      {
+        "repeat": 4,
+        "report_batch": "additional",
+        "successes": {
+          "complete": {
+            "standard": 205,
+            "long": 62
+          },
+          "representativeness": {
+            "standard": 198,
+            "long": 55
+          },
+          "fixed_random": {
+            "standard": 193,
+            "long": 50
+          }
+        }
+      }
+    ]
+  },
+  "independent_panel": {
+    "environment": "navigation",
+    "panel": "independent_standard_reported",
+    "episodes": 240,
+    "task_manifest": null,
+    "checkpoint_ids": null,
+    "source": "collaborator-reported independent panel",
+    "results": [
+      {
+        "method": "original",
+        "successes": 110
+      },
+      {
+        "method": "teacher",
+        "successes": 205
+      },
+      {
+        "method": "complete_offline",
+        "successes": 184
+      },
+      {
+        "method": "representativeness_offline",
+        "successes": 170
+      },
+      {
+        "method": "same_k4_online",
+        "successes": 191
+      }
+    ]
+  },
+  "additional_ablations": {
+    "aggregation": "one supplied run per simplified condition; not an average over all collaborator trials",
+    "reference": "original main-table K4 OPD reference; no additional complete-selector training counted",
+    "entries": [
+      {
+        "method": "representativeness",
+        "navigation": {
+          "standard": {
+            "successes": 187,
+            "episodes": 240,
+            "reported_percent": 77.92,
+            "count_origin": "uniquely implied by reported percentage and denominator"
+          },
+          "long": {
+            "successes": 43,
+            "episodes": 240,
+            "reported_percent": 17.92,
+            "count_origin": "uniquely implied by reported percentage and denominator"
+          }
+        },
+        "sokoban": {
+          "successes": 206,
+          "episodes": 256,
+          "reported_percent": 80.47,
+          "count_origin": "reported"
+        }
+      },
+      {
+        "method": "coverage",
+        "navigation": {
+          "standard": {
+            "successes": 190,
+            "episodes": 240,
+            "reported_percent": 79.17,
+            "count_origin": "uniquely implied by reported percentage and denominator"
+          },
+          "long": {
+            "successes": 46,
+            "episodes": 240,
+            "reported_percent": 19.17,
+            "count_origin": "uniquely implied by reported percentage and denominator"
+          }
+        },
+        "sokoban": {
+          "successes": 211,
+          "episodes": 256,
+          "reported_percent": 82.42,
+          "count_origin": "reported"
+        }
+      },
+      {
+        "method": "unordered",
+        "navigation": {
+          "standard": {
+            "successes": 195,
+            "episodes": 240,
+            "reported_percent": 81.25,
+            "count_origin": "uniquely implied by reported percentage and denominator"
+          },
+          "long": {
+            "successes": 51,
+            "episodes": 240,
+            "reported_percent": 21.25,
+            "count_origin": "uniquely implied by reported percentage and denominator"
+          }
+        },
+        "sokoban": {
+          "successes": 219,
+          "episodes": 256,
+          "reported_percent": 85.55,
+          "count_origin": "reused original complete-selector result",
+          "is_reuse": true
+        }
+      }
+    ]
+  },
+  "accounting": {
+    "core_training_result_slots": 55,
+    "additional_repeat_training_entries": 12,
+    "additional_ablation_training_entries": 5,
+    "training_result_slots_total": 72,
+    "independent_panel_evaluation_entries": 5,
+    "reused_sokoban_unordered_adds_training_runs": 0
+  },
+  "scope": {
+    "earlier_valid_supplementary_repeats_retained": true,
+    "superseded_ablation_transcriptions_excluded": true,
+    "original_result_snapshots_unchanged": true,
+    "no_training_curves_or_per_episode_records_inferred": true
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "schema": "student-scale-final100-v1",
+  "as_of": "2026-11-10",
+  "student": "Qwen3.5-9B",
+  "teacher": "Qwen3.5-27B",
+  "updates": 100,
+  "batch_size": 64,
+  "responses_per_run": 6400,
+  "final_update": 100,
+  "completed_training_runs": 9,
+  "monitor_points": 180,
+  "selected_pool_and_draw_dataset_hashes_match_4b": true,
+  "spatial_final_convention": "Held-out subset of full single-room final panel; standalone heldout_single is monitoring only.",
+  "deferred_9b_experiments": "K1/K16/full-pool offline OPD; not included in this snapshot.",
+  "panels": [
+    {
+      "environment": "navigation",
+      "panel": "standard60",
+      "metric": "success",
+      "tasks": 60,
+      "episodes": 240,
+      "scores": {
+        "teacher": 0.85,
+        "original": 0.6708333333333333,
+        "k4_sft": 0.7291666666666666,
+        "k4_opd": 0.7416666666666667,
+        "online_opd": 0.8625
+      },
+      "successes": {
+        "original": 161,
+        "k4_sft": 175,
+        "k4_opd": 178,
+        "online_opd": 207
+      },
+      "same_task_repeat_slots_as_4b": true
+    },
+    {
+      "environment": "navigation",
+      "panel": "long_horizon60",
+      "metric": "success",
+      "tasks": 60,
+      "episodes": 240,
+      "scores": {
+        "teacher": 0.25,
+        "original": 0.25833333333333336,
+        "k4_sft": 0.2375,
+        "k4_opd": 0.24583333333333332,
+        "online_opd": 0.2
+      },
+      "successes": {
+        "original": 62,
+        "k4_sft": 57,
+        "k4_opd": 59,
+        "online_opd": 48
+      },
+      "same_task_repeat_slots_as_4b": true
+    },
+    {
+      "environment": "sokoban",
+      "panel": "confirmation64",
+      "metric": "success",
+      "tasks": 64,
+      "episodes": 256,
+      "scores": {
+        "teacher": 0.8828125,
+        "original": 0.640625,
+        "k4_sft": 0.83203125,
+        "k4_opd": 0.875,
+        "online_opd": 0.875
+      },
+      "successes": {
+        "original": 164,
+        "k4_sft": 213,
+        "k4_opd": 224,
+        "online_opd": 224
+      },
+      "same_task_repeat_slots_as_4b": true
+    },
+    {
+      "environment": "spatial",
+      "panel": "single/eval",
+      "metric": "cogmap_score",
+      "tasks": 4,
+      "episodes": 16,
+      "scores": {
+        "teacher": 0.45657245377732975,
+        "original": 0.2789974160511658,
+        "k4_sft": 0.42738458848067695,
+        "k4_opd": 0.42550000127151444,
+        "online_opd": 0.48811350967794603
+      },
+      "successes": {},
+      "same_task_repeat_slots_as_4b": true
+    },
+    {
+      "environment": "spatial",
+      "panel": "two_room/all",
+      "metric": "cogmap_score",
+      "tasks": 20,
+      "episodes": 80,
+      "scores": {
+        "teacher": 0.3777416475631593,
+        "original": 0.20230090032086906,
+        "k4_sft": 0.2554522868552385,
+        "k4_opd": 0.29756146049188137,
+        "online_opd": 0.3211846905186408
+      },
+      "successes": {},
+      "same_task_repeat_slots_as_4b": true
+    },
+    {
+      "environment": "spatial",
+      "panel": "single/train",
+      "metric": "cogmap_score",
+      "tasks": 16,
+      "episodes": 64,
+      "scores": {
+        "teacher": 0.4799404319578722,
+        "original": 0.31235182183280813,
+        "k4_sft": 0.3863289598946132,
+        "k4_opd": 0.4152019987846295,
+        "online_opd": 0.4534099893107524
+      },
+      "successes": {},
+      "same_task_repeat_slots_as_4b": true
+    },
+    {
+      "environment": "spatial",
+      "panel": "single/all",
+      "metric": "cogmap_score",
+      "tasks": 20,
+      "episodes": 80,
+      "scores": {
+        "teacher": 0.4752668363217637,
+        "original": 0.30568094067647966,
+        "k4_sft": 0.39454008561182585,
+        "k4_opd": 0.41726159928200646,
+        "online_opd": 0.4603506933841911
+      },
+      "successes": {},
+      "same_task_repeat_slots_as_4b": true
+    }
+  ]
+}

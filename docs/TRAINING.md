@@ -65,7 +65,7 @@ Use a fresh label directory. The original collector fails visibly on an interrup
 
 ## Live monitoring every five updates
 
-`prepare_evaluation.py` attaches a frozen panel schedule. Each descriptor has `name`, `scope` (`monitor` or `final`), `environment`, and paths to the environment protocol and slot list. Paths are relative to the descriptor file. `configs/evaluations/*.json` provide the paper panels. Final panels are used only at update 100.
+`prepare_evaluation.py` attaches a frozen panel schedule. Each descriptor has `name`, `scope` (`monitor` or `final`), `environment`, and paths to the environment protocol and slot list. Paths are relative to the descriptor file. `configs/evaluations/*.json` provide the paper panels. Final evaluation runs at update 100; the checkpoint is not selected from curve maxima. Navigation's 16 monitoring tasks are a subset of its 60 standard final tasks, and SpatialGym reuses its four held-out rooms for monitoring.
 
 ```bash
 python scripts/prepare_evaluation.py --run outputs/opd \

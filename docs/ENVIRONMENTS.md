@@ -17,6 +17,8 @@ Install environment packages in a separate environment on a CPU task or suitable
 
 `configs/environments/` contains the actual formal settings, including the versioned SpatialGym initial-image clarification. `configs/panels/` contains frozen final task/repeat/seed lists, not newly randomized replacements. Sokoban final: 64 maps × 4; Navigation: 60 standard and 60 long-horizon tasks × 4 each; SpatialGym: 20 single-room and 20 double-room scenes × 4. Report the 16 training and 4 held-out single rooms separately. Those four held-out rooms are a development split; the double-room panel is the cross-scene test.
 
+Monitoring uses 16 Navigation tasks drawn from the 60 standard final tasks; final evaluations execute separately. SpatialGym monitors the same four held-out single rooms. These original panels were inspected during development. The additional independent Navigation panel is recorded separately in the released result snapshot; its task manifest is not bundled.
+
 ## Sokoban example
 
 ```bash

@@ -1,0 +1,385 @@
+{
+  "schema": "online-task-budget-final100-v1",
+  "as_of": "2026-11-16",
+  "student": "Qwen3.5-4B",
+  "teacher": "Qwen3.5-27B",
+  "updates": 100,
+  "batch_size": 64,
+  "responses_per_run": 6400,
+  "final_update": 100,
+  "evaluation_repeats": 4,
+  "status": "passed",
+  "completed_new_runs": 8,
+  "reused_full_task_runs": 3,
+  "runs": [
+    {
+      "environment": "navigation",
+      "budget": 1,
+      "tasks": 1,
+      "status": "passed",
+      "generated_response_tokens": 3582167,
+      "environment_turns": 6400,
+      "updates": 100,
+      "responses": 6400,
+      "added_run": true,
+      "reused_for_k16": false,
+      "selected_task_ids": [
+        "navigation:e764f702e09084f25a92e59d22ef2e5a6d50075224dea16c25cd5e5bd83882e1"
+      ],
+      "task_set_matches_offline_k4": null,
+      "panels": [
+        {
+          "panel": "standard60",
+          "metric": "success",
+          "episodes": 240,
+          "mean": 0.8041666666666667,
+          "successes": 193,
+          "same_task_repeat_slots": true
+        },
+        {
+          "panel": "long_horizon60",
+          "metric": "success",
+          "episodes": 240,
+          "mean": 0.14166666666666666,
+          "successes": 34,
+          "same_task_repeat_slots": true
+        }
+      ]
+    },
+    {
+      "environment": "navigation",
+      "budget": 4,
+      "tasks": 4,
+      "status": "passed",
+      "generated_response_tokens": 4263776,
+      "environment_turns": 6400,
+      "updates": 100,
+      "responses": 6400,
+      "added_run": true,
+      "reused_for_k16": false,
+      "selected_task_ids": [
+        "navigation:075ceb11767550131fb3d64fb9f4bb0959d6a7f9e563cfdcbca9eae76b448bfb",
+        "navigation:16a8bf9809cb1f2cfee41511355b54a4bf84bc0698c1f0ec3c385213509d50a3",
+        "navigation:71f72a0bf761b505697cc8e14044ef984197d19318c40c178b74d63fc92a3e9d",
+        "navigation:e764f702e09084f25a92e59d22ef2e5a6d50075224dea16c25cd5e5bd83882e1"
+      ],
+      "task_set_matches_offline_k4": true,
+      "panels": [
+        {
+          "panel": "standard60",
+          "metric": "success",
+          "episodes": 240,
+          "mean": 0.825,
+          "successes": 198,
+          "same_task_repeat_slots": true
+        },
+        {
+          "panel": "long_horizon60",
+          "metric": "success",
+          "episodes": 240,
+          "mean": 0.225,
+          "successes": 54,
+          "same_task_repeat_slots": true
+        }
+      ]
+    },
+    {
+      "environment": "navigation",
+      "budget": 16,
+      "tasks": 16,
+      "status": "passed",
+      "generated_response_tokens": 5608656,
+      "environment_turns": 6400,
+      "updates": 100,
+      "responses": 6400,
+      "added_run": true,
+      "reused_for_k16": false,
+      "selected_task_ids": [
+        "navigation:075ceb11767550131fb3d64fb9f4bb0959d6a7f9e563cfdcbca9eae76b448bfb",
+        "navigation:086fc9ed8b238479e76043cb0beacdc8bf80537a15a7bc22fdb28c7e493d9f2a",
+        "navigation:16a8bf9809cb1f2cfee41511355b54a4bf84bc0698c1f0ec3c385213509d50a3",
+        "navigation:347a30d7209668cd98eb72d2b074ddd78d7916c73a05a7ceba8c3fcf8dfc165d",
+        "navigation:37ffd2e327914845451d046547ec71ff75760c4ace08fbec9dd7a8e4383db982",
+        "navigation:390b478f2136b58ec9d679e36b89bc6867c0f6aa35dcca3f80079bb402788e73",
+        "navigation:5ed52b2ff43af728f47592abbfa5a7b6178d2df66e749ecfb07592451ec1cde9",
+        "navigation:5ff57f01ea2a97b704081e9e16fef8b4a555bc4faf01a724f4c6790d7c7fc1be",
+        "navigation:677bd94078ad46b34a2bc3081e4e9a4bb7dc569451370b39b0e44126479387b2",
+        "navigation:6a3a2353167eab509318ea3d2d7ca5203e4bc989af075ca104a630866886d244",
+        "navigation:71f72a0bf761b505697cc8e14044ef984197d19318c40c178b74d63fc92a3e9d",
+        "navigation:81d0a140a65504c1a16054d804f7e40527482fcf292dd458b961d45c9ffb6fd2",
+        "navigation:aca3abfc1ed8eca4813886a87709f38048c93619ab8d018492859f5dbaa626fe",
+        "navigation:b253c41dee7cdbf372cd6116903bbcf8461fd2593968c763a595d0ac04419072",
+        "navigation:bed681f76b21cbe7fa2e7d09278042962744fb1c3a5e6ed8fdb8995f40098f9d",
+        "navigation:e764f702e09084f25a92e59d22ef2e5a6d50075224dea16c25cd5e5bd83882e1"
+      ],
+      "task_set_matches_offline_k4": null,
+      "panels": [
+        {
+          "panel": "standard60",
+          "metric": "success",
+          "episodes": 240,
+          "mean": 0.7625,
+          "successes": 183,
+          "same_task_repeat_slots": true
+        },
+        {
+          "panel": "long_horizon60",
+          "metric": "success",
+          "episodes": 240,
+          "mean": 0.20416666666666666,
+          "successes": 49,
+          "same_task_repeat_slots": true
+        }
+      ]
+    },
+    {
+      "environment": "navigation",
+      "budget": "full",
+      "tasks": 120,
+      "status": "passed",
+      "generated_response_tokens": 5099729,
+      "environment_turns": 6400,
+      "updates": 100,
+      "responses": 6400,
+      "added_run": false,
+      "reused_for_k16": false,
+      "selected_task_ids": null,
+      "task_set_matches_offline_k4": null,
+      "panels": [
+        {
+          "panel": "standard60",
+          "metric": "success",
+          "episodes": 240,
+          "mean": 0.7875,
+          "successes": 189,
+          "same_task_repeat_slots": true
+        },
+        {
+          "panel": "long_horizon60",
+          "metric": "success",
+          "episodes": 240,
+          "mean": 0.2125,
+          "successes": 51,
+          "same_task_repeat_slots": true
+        }
+      ]
+    },
+    {
+      "environment": "sokoban",
+      "budget": 1,
+      "tasks": 1,
+      "status": "passed",
+      "generated_response_tokens": 120935416,
+      "environment_turns": 6400,
+      "updates": 100,
+      "responses": 6400,
+      "added_run": true,
+      "reused_for_k16": false,
+      "selected_task_ids": [
+        "sokoban:6eadfa70091c:d464cc4052ec7bca7553844d11f49103d60cb17ff86fffc777135da12016f000"
+      ],
+      "task_set_matches_offline_k4": null,
+      "panels": [
+        {
+          "panel": "confirmation64",
+          "metric": "success",
+          "episodes": 256,
+          "mean": 0.8046875,
+          "successes": 206,
+          "same_task_repeat_slots": true
+        }
+      ]
+    },
+    {
+      "environment": "sokoban",
+      "budget": 4,
+      "tasks": 4,
+      "status": "passed",
+      "generated_response_tokens": 107527762,
+      "environment_turns": 6400,
+      "updates": 100,
+      "responses": 6400,
+      "added_run": true,
+      "reused_for_k16": false,
+      "selected_task_ids": [
+        "sokoban:6eadfa70091c:0cf0627ef815641e077c4ee0f1becfb5adbc216f8d0e117021e5d4f713745548",
+        "sokoban:6eadfa70091c:c00be6d3cb6ac1750d9a6e5a0385144d82080b7e38568b1568a565c9350de457",
+        "sokoban:6eadfa70091c:d464cc4052ec7bca7553844d11f49103d60cb17ff86fffc777135da12016f000",
+        "sokoban:6eadfa70091c:f272d55b0ca5ca3a44904f983a001612ccf6495fc43d8f1f6e5dc419b0d1b857"
+      ],
+      "task_set_matches_offline_k4": true,
+      "panels": [
+        {
+          "panel": "confirmation64",
+          "metric": "success",
+          "episodes": 256,
+          "mean": 0.84375,
+          "successes": 216,
+          "same_task_repeat_slots": true
+        }
+      ]
+    },
+    {
+      "environment": "sokoban",
+      "budget": 16,
+      "tasks": 16,
+      "status": "passed",
+      "generated_response_tokens": 109932239,
+      "environment_turns": 6400,
+      "updates": 100,
+      "responses": 6400,
+      "added_run": true,
+      "reused_for_k16": false,
+      "selected_task_ids": [
+        "sokoban:6eadfa70091c:083689d3642fb9b2f9b2c3b8f3396dfe44c565b117751ac08a801904b80cde85",
+        "sokoban:6eadfa70091c:0cf0627ef815641e077c4ee0f1becfb5adbc216f8d0e117021e5d4f713745548",
+        "sokoban:6eadfa70091c:1f0de0bb67513613dcd1cd6fd3cb3bbdeb52f06aa7e45af4401f1d7e24a2c299",
+        "sokoban:6eadfa70091c:29bd52c183ebd4e252f79a41d37517ef80277e6d07f8fb0394f1ca576b9c8f59",
+        "sokoban:6eadfa70091c:35f08cda912b210dd72dce9c1405025c6d5b7cf5ac8dc405ae527f02c8a14fbe",
+        "sokoban:6eadfa70091c:4b523dd6f1fb1fdae49c8956b369fcbefabbe8a351ce9787e7e04f5335278fbe",
+        "sokoban:6eadfa70091c:672d22f4730905ef9ebe9675ae0e7e09dd70931604e0fa092a48426e3611a327",
+        "sokoban:6eadfa70091c:7ec3174d5a8ff6eda97930f8c8559a4c44bbef21b6edbd920b496adb06175d82",
+        "sokoban:6eadfa70091c:a75a27c5bfb56b5e420c85e946cb37177745074f112b2ce60f5c252592be505e",
+        "sokoban:6eadfa70091c:bbd8b3182a816beba16a8a81f732f6f4fd637b9ba2bdf8e881d68c83647a6dfa",
+        "sokoban:6eadfa70091c:bcdd3ff3f4384e2ec1392e2936eaa46b871122641e16bad96701af20e3d3371f",
+        "sokoban:6eadfa70091c:c00be6d3cb6ac1750d9a6e5a0385144d82080b7e38568b1568a565c9350de457",
+        "sokoban:6eadfa70091c:d464cc4052ec7bca7553844d11f49103d60cb17ff86fffc777135da12016f000",
+        "sokoban:6eadfa70091c:db1b6c4c781c3405ebb152e55a41c429e878ffa36c49a848ca903aa387d24ad3",
+        "sokoban:6eadfa70091c:ded30355c049128ac9f28761fa8a706843d7f6ce6b69f75d53ab8d199d7595bb",
+        "sokoban:6eadfa70091c:f272d55b0ca5ca3a44904f983a001612ccf6495fc43d8f1f6e5dc419b0d1b857"
+      ],
+      "task_set_matches_offline_k4": null,
+      "panels": [
+        {
+          "panel": "confirmation64",
+          "metric": "success",
+          "episodes": 256,
+          "mean": 0.8515625,
+          "successes": 218,
+          "same_task_repeat_slots": true
+        }
+      ]
+    },
+    {
+      "environment": "sokoban",
+      "budget": "full",
+      "tasks": 128,
+      "status": "passed",
+      "generated_response_tokens": 116487613,
+      "environment_turns": 6400,
+      "updates": 100,
+      "responses": 6400,
+      "added_run": false,
+      "reused_for_k16": false,
+      "selected_task_ids": null,
+      "task_set_matches_offline_k4": null,
+      "panels": [
+        {
+          "panel": "confirmation64",
+          "metric": "success",
+          "episodes": 256,
+          "mean": 0.859375,
+          "successes": 220,
+          "same_task_repeat_slots": true
+        }
+      ]
+    },
+    {
+      "environment": "spatial",
+      "budget": 1,
+      "tasks": 1,
+      "status": "passed",
+      "generated_response_tokens": 14013057,
+      "environment_turns": 6400,
+      "updates": 100,
+      "responses": 6400,
+      "added_run": true,
+      "reused_for_k16": false,
+      "selected_task_ids": [
+        "spatial:1-room:5299760c9d15:dc1bb37385418ac273be68526847455b859f9c9dd256f83b6c6a2b6af28e674e"
+      ],
+      "task_set_matches_offline_k4": null,
+      "panels": [
+        {
+          "panel": "single/eval",
+          "metric": "cogmap_score",
+          "episodes": 16,
+          "mean": 0.40570819152620907,
+          "same_task_repeat_slots": true
+        },
+        {
+          "panel": "two_room/all",
+          "metric": "cogmap_score",
+          "episodes": 80,
+          "mean": 0.28782297386186056,
+          "same_task_repeat_slots": true
+        }
+      ]
+    },
+    {
+      "environment": "spatial",
+      "budget": 4,
+      "tasks": 4,
+      "status": "passed",
+      "generated_response_tokens": 14936382,
+      "environment_turns": 6400,
+      "updates": 100,
+      "responses": 6400,
+      "added_run": true,
+      "reused_for_k16": false,
+      "selected_task_ids": [
+        "spatial:1-room:5299760c9d15:0da932068e56befa0d90c27e0661240e7cc1283bae81ff280d81106857d04a75",
+        "spatial:1-room:5299760c9d15:1877504ff8bb97786833781a23b4ef8c8c8461e0feff4a6e2f44da5a927e2ea9",
+        "spatial:1-room:5299760c9d15:1db78757204a437bcf3e781041bde6ae011992048d41ff8959b0da15f6d465a0",
+        "spatial:1-room:5299760c9d15:dc1bb37385418ac273be68526847455b859f9c9dd256f83b6c6a2b6af28e674e"
+      ],
+      "task_set_matches_offline_k4": true,
+      "panels": [
+        {
+          "panel": "single/eval",
+          "metric": "cogmap_score",
+          "episodes": 16,
+          "mean": 0.4032307952063942,
+          "same_task_repeat_slots": true
+        },
+        {
+          "panel": "two_room/all",
+          "metric": "cogmap_score",
+          "episodes": 80,
+          "mean": 0.2997584283609743,
+          "same_task_repeat_slots": true
+        }
+      ]
+    },
+    {
+      "environment": "spatial",
+      "budget": "full",
+      "tasks": 16,
+      "status": "passed",
+      "generated_response_tokens": 11728936,
+      "environment_turns": 6400,
+      "updates": 100,
+      "responses": 6400,
+      "added_run": false,
+      "reused_for_k16": true,
+      "selected_task_ids": null,
+      "task_set_matches_offline_k4": null,
+      "panels": [
+        {
+          "panel": "single/eval",
+          "metric": "cogmap_score",
+          "episodes": 16,
+          "mean": 0.47632846936384216,
+          "same_task_repeat_slots": true
+        },
+        {
+          "panel": "two_room/all",
+          "metric": "cogmap_score",
+          "episodes": 80,
+          "mean": 0.30507527890554753,
+          "same_task_repeat_slots": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "schema": "paper-code-publication-v1",
+  "date": "2026-11-16",
+  "paper_revision": "ff900bb5b04a4dded742af33a2ca6f972a0fbc34",
+  "title": "Distilling Visual Agents from Limited Interaction Experience",
+  "selection_front_end_included": false,
+  "training_runtime_changed": false,
+  "sources": {
+    "paper/cvpr2027/data/collaborator_followup_results.json": "ddb61d770cf1f7d85f55c0ef8af3e6da27d5076a77231abd35fb1aa682c37a68",
+    "paper/cvpr2027/data/data_budget.csv": "3e7b38076c1a3f0c344a30b62ae40900ec89c4fdc5adb403799d15edf439278e",
+    "paper/cvpr2027/data/final100_results.json": "e08449e2685cbdbd4b80218af8fc3c8afaa64aaa0536d20e6676e29126cb3273",
+    "paper/cvpr2027/data/learning_curves.csv": "74a5b8be479101d9d830b8816113784aea9f0f4018dc7bea61e44986ad08351d",
+    "paper/cvpr2027/data/online_task_budget_results.json": "b896b789080eff7c040d7cf0881540b6c290fd942fc676b1fd67ea230d52a88e",
+    "paper/cvpr2027/data/student_scale_curves.csv": "fcef3bf181503555da2e7261c9931f1e8692defc1ae4291d14a0bef74d20b989",
+    "paper/cvpr2027/data/student_scale_results.json": "aae8197349e5f3b2619c22398c7322ca7c46e02695afa5d69994733acbb9a67a",
+    "paper/cvpr2027/figures/data_budget.png": "a5ed6ed3fde5b769bca87022bf1ceb5ea3d7c95e6880d9f023ac6ae28b7c3542",
+    "paper/cvpr2027/figures/selection-case-navigation.png": "feb8cebf02c74640ba84ef1731b7802d0c0fc4292df9c2ffa4eae69ffd5b2bf9",
+    "paper/figures/method-v8.png": "39c7ef8bf1988484e9a897920975b6484c5b753b611c197a961000dd8fa26430",
+    "paper/figures/teaser-v3.png": "b6d0c159a5269b68e5a2ef291d06c81f69a3b15e1cfec47de706e479b589a028"
+  },
+  "exports": {
+    "results/README.md": "00833040a1ac1d6303c4053ae3eddd344915fe39d62e5b8e8d41c75d5aa5f20d",
+    "results/collaborator_followup_results.json": "072a1fca409a32c03816a04d5b4e5d3328c7717e1c5dadc87b75a8b037112dd2",
+    "results/data_budget.csv": "3e7b38076c1a3f0c344a30b62ae40900ec89c4fdc5adb403799d15edf439278e",
+    "results/learning_curves.csv": "74a5b8be479101d9d830b8816113784aea9f0f4018dc7bea61e44986ad08351d",
+    "results/main.json": "27d924f13bf8fad7196868f7797bdfea544d1fa724e0ee92c002fa3968c7aab0",
+    "results/online_task_budget_results.json": "3f812cfb681558a7c6a529a32a6e5bd67183989a7fc1298aa6e4dbc9d9aa5984",
+    "results/paper_results_4b.json": "ca22d120442f40aa76a692589dbe523b6270299ddb0519699d02515c03851ff2",
+    "results/student_scale_curves.csv": "fcef3bf181503555da2e7261c9931f1e8692defc1ae4291d14a0bef74d20b989",
+    "results/student_scale_results.json": "6d9d8cc3cd52b811507c75503c15bfe11cce988f1f8efc40ae4da1b14a506af9",
+    "assets/figures/README.md": "a67b4f96d0bb3cf8385a34c5314c2afa983f3863c0c10d82a604e7b3fae99d5a",
+    "assets/figures/data_budget.png": "a5ed6ed3fde5b769bca87022bf1ceb5ea3d7c95e6880d9f023ac6ae28b7c3542",
+    "assets/figures/method.png": "39c7ef8bf1988484e9a897920975b6484c5b753b611c197a961000dd8fa26430",
+    "assets/figures/selection.png": "feb8cebf02c74640ba84ef1731b7802d0c0fc4292df9c2ffa4eae69ffd5b2bf9",
+    "assets/figures/teaser.png": "b6d0c159a5269b68e5a2ef291d06c81f69a3b15e1cfec47de706e479b589a028"
+  },
+  "checks": {
+    "main_table_matches_paper": true,
+    "budget_table_matches_paper": true,
+    "monitor_points_4b": 300,
+    "monitor_points_9b": 180,
+    "local_markdown_targets_exist": true,
+    "paper_figure_bytes_preserved": true,
+    "repeat_summary": {
+      "complete": {
+        "standard": [
+          81.98,
+          2.73
+        ],
+        "long": [
+          23.75,
+          2.93
+        ]
+      },
+      "representativeness": {
+        "standard": [
+          80.73,
+          1.2
+        ],
+        "long": [
+          23.54,
+          4.2
+        ]
+      },
+      "fixed_random": {
+        "standard": [
+          76.88,
+          2.86
+        ],
+        "long": [
+          21.67,
+          4.56
+        ]
+      }
+    }
+  }
+}

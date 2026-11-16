@@ -1,5 +1,13 @@
 # Release validation
 
+## Paper synchronization — 2026-11-16
+
+The documentation and result bundle were synchronized with the current paper, **Distilling Visual Agents from Limited Interaction Experience**. Training/runtime code and bundled trajectory/image examples are unchanged. On the CPU compute node, all **30 existing contract tests passed again**, and the result plotting command produced a PDF.
+
+The refresh additionally checked the 4B/9B README table, all 15 offline/online budget rows, and four-run mean/standard-deviation summaries against paper snapshots. All **480 monitoring points** match the paper files byte for byte; all four published figure images retain the original paper bytes. Local Markdown targets resolve. [The publication manifest](../results/publication_manifest.json) records the paper revision and file hashes. Collaborator results retain their reported provenance; these checks do not imply raw-log verification.
+
+## Package validation
+
 This package was extracted from the completed formal 100-update experiments. The public entrypoints remove private scheduler, host, path and deployment assumptions; **the portable package has not been retrained end to end on GPUs as part of this release**. Ongoing experiments were not interrupted to perform a redundant training run.
 
 Verified on a CPU compute node:

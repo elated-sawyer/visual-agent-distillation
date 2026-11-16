@@ -1,0 +1,509 @@
+{
+  "schema": "paper-final100-v1",
+  "as_of": "2026-11-10",
+  "student": "Qwen3.5-4B",
+  "teacher": "Qwen3.5-27B",
+  "updates": 100,
+  "batch_size": 64,
+  "responses_per_run": 6400,
+  "final_update": 100,
+  "evaluation_repeats": 4,
+  "monitoring_interval": 5,
+  "candidate_trajectories": {
+    "navigation": 120,
+    "sokoban": 128,
+    "spatial": 32
+  },
+  "panels": [
+    {
+      "environment": "navigation",
+      "panel": "standard60",
+      "metric": "success",
+      "tasks": 60,
+      "episodes": 240,
+      "scores": {
+        "k4_opd": 0.8208333333333333,
+        "k4_sft": 0.7416666666666667,
+        "full_opd": 0.775,
+        "full_sft": 0.6416666666666667,
+        "online_opd": 0.7875,
+        "original": 0.49166666666666664,
+        "teacher": 0.85
+      },
+      "successes": {
+        "k4_opd": 197,
+        "k4_sft": 178,
+        "full_opd": 186,
+        "full_sft": 154,
+        "online_opd": 189,
+        "original": 118,
+        "teacher": 204
+      },
+      "teacher_gap_closed": {
+        "k4_opd": 0.9186046511627907,
+        "k4_sft": 0.6976744186046513,
+        "full_opd": 0.7906976744186047,
+        "full_sft": 0.4186046511627909,
+        "online_opd": 0.8255813953488372
+      },
+      "k4_fraction_of_online_gain": 1.1126760563380282
+    },
+    {
+      "environment": "navigation",
+      "panel": "long_horizon60",
+      "metric": "success",
+      "tasks": 60,
+      "episodes": 240,
+      "scores": {
+        "k4_opd": 0.22083333333333333,
+        "k4_sft": 0.20416666666666666,
+        "full_opd": 0.225,
+        "full_sft": 0.15416666666666667,
+        "online_opd": 0.2125,
+        "original": 0.13333333333333333,
+        "teacher": 0.25
+      },
+      "successes": {
+        "k4_opd": 53,
+        "k4_sft": 49,
+        "full_opd": 54,
+        "full_sft": 37,
+        "online_opd": 51,
+        "original": 32,
+        "teacher": 60
+      },
+      "teacher_gap_closed": {
+        "k4_opd": 0.7499999999999999,
+        "k4_sft": 0.6071428571428571,
+        "full_opd": 0.7857142857142858,
+        "full_sft": 0.17857142857142866,
+        "online_opd": 0.6785714285714285
+      },
+      "k4_fraction_of_online_gain": 1.1052631578947367
+    },
+    {
+      "environment": "sokoban",
+      "panel": "confirmation64",
+      "metric": "success",
+      "tasks": 64,
+      "episodes": 256,
+      "scores": {
+        "k4_opd": 0.85546875,
+        "k4_sft": 0.76171875,
+        "full_opd": 0.8359375,
+        "full_sft": 0.77734375,
+        "online_opd": 0.859375,
+        "original": 0.6015625,
+        "teacher": 0.8828125
+      },
+      "successes": {
+        "k4_opd": 219,
+        "k4_sft": 195,
+        "full_opd": 214,
+        "full_sft": 199,
+        "online_opd": 220,
+        "original": 154,
+        "teacher": 226
+      },
+      "teacher_gap_closed": {
+        "k4_opd": 0.9027777777777778,
+        "k4_sft": 0.5694444444444444,
+        "full_opd": 0.8333333333333334,
+        "full_sft": 0.625,
+        "online_opd": 0.9166666666666666
+      },
+      "k4_fraction_of_online_gain": 0.9848484848484849
+    },
+    {
+      "environment": "spatial",
+      "panel": "single/all",
+      "metric": "cogmap_score",
+      "tasks": 20,
+      "episodes": 80,
+      "scores": {
+        "k4_opd": 0.39127485959163255,
+        "k4_sft": 0.3646099746215734,
+        "full_opd": 0.3990564982730552,
+        "full_sft": 0.3833266702536938,
+        "original": 0.1968288051406581,
+        "teacher": 0.4752668363217637,
+        "online_opd": 0.41045537210612687
+      },
+      "teacher_gap_closed": {
+        "k4_opd": 0.6983458891235304,
+        "k4_sft": 0.6025799305116646,
+        "full_opd": 0.7262933596914473,
+        "full_sft": 0.6698002579673865,
+        "online_opd": 0.7672319979396736
+      },
+      "k4_fraction_of_online_gain": 0.910214760331777
+    },
+    {
+      "environment": "spatial",
+      "panel": "single/train",
+      "metric": "cogmap_score",
+      "tasks": 16,
+      "episodes": 64,
+      "scores": {
+        "k4_opd": 0.38630088911937877,
+        "k4_sft": 0.3558702302706834,
+        "full_opd": 0.3822149095153727,
+        "full_sft": 0.373086219573167,
+        "original": 0.18220220377876445,
+        "teacher": 0.4799404319578722,
+        "online_opd": 0.39398709779169794
+      },
+      "teacher_gap_closed": {
+        "k4_opd": 0.6854970777143083,
+        "k4_sft": 0.5832909920705479,
+        "full_opd": 0.6717736817332316,
+        "full_sft": 0.6411135612709233,
+        "online_opd": 0.7113124011926742
+      },
+      "k4_fraction_of_online_gain": 0.9637074744724249
+    },
+    {
+      "environment": "spatial",
+      "panel": "single/eval",
+      "metric": "cogmap_score",
+      "tasks": 4,
+      "episodes": 16,
+      "scores": {
+        "k4_opd": 0.41117074148064775,
+        "k4_sft": 0.39956895202513376,
+        "full_opd": 0.4664228533037853,
+        "full_sft": 0.424288472975801,
+        "original": 0.2553352105882328,
+        "teacher": 0.45657245377732975,
+        "online_opd": 0.47632846936384216
+      },
+      "teacher_gap_closed": {
+        "k4_opd": 0.7743871284600173,
+        "k4_sft": 0.7167348307458605,
+        "full_opd": 1.048949187388735,
+        "full_sft": 0.8395725349348362,
+        "online_opd": 1.0981727600389966
+      },
+      "k4_fraction_of_online_gain": 0.7051596585154039
+    },
+    {
+      "environment": "spatial",
+      "panel": "two_room/all",
+      "metric": "cogmap_score",
+      "tasks": 20,
+      "episodes": 80,
+      "scores": {
+        "k4_opd": 0.27000837409168105,
+        "k4_sft": 0.24134047937790656,
+        "full_opd": 0.3253330399606323,
+        "full_sft": 0.2833618827313984,
+        "original": 0.11569752102150341,
+        "teacher": 0.3777416475631593,
+        "online_opd": 0.30507527890554753
+      },
+      "teacher_gap_closed": {
+        "k4_opd": 0.5888735424323567,
+        "k4_sft": 0.4794725224891858,
+        "full_opd": 0.8000008307982592,
+        "full_sft": 0.6398325500466511,
+        "online_opd": 0.7226941522535506
+      },
+      "k4_fraction_of_online_gain": 0.8148309220381734
+    }
+  ],
+  "core_provenance": "Locally audited original endpoints; one training run per condition.",
+  "original_collaborator_controls": {
+    "schema": "collaborator-formal-results-v1",
+    "status": "accepted_collaborator_report",
+    "source_type": "user_supplied_collaborator_aggregates",
+    "arithmetic_verified": true,
+    "raw_episode_audit_performed": false,
+    "training_log_audit_performed": false,
+    "selectors": {
+      "随机子集1": {
+        "navigation_standard": {
+          "mean": 0.7416666666666667,
+          "successes": 178,
+          "episodes": 240,
+          "display": "74.17",
+          "unit": "percent"
+        },
+        "navigation_long": {
+          "mean": 0.1875,
+          "successes": 45,
+          "episodes": 240,
+          "display": "18.75",
+          "unit": "percent"
+        },
+        "sokoban": {
+          "mean": 0.78515625,
+          "successes": 201,
+          "episodes": 256,
+          "display": "78.52",
+          "unit": "percent"
+        }
+      },
+      "随机子集2": {
+        "navigation_standard": {
+          "mean": 0.7625,
+          "successes": 183,
+          "episodes": 240,
+          "display": "76.25",
+          "unit": "percent"
+        },
+        "navigation_long": {
+          "mean": 0.19583333333333333,
+          "successes": 47,
+          "episodes": 240,
+          "display": "19.58",
+          "unit": "percent"
+        },
+        "sokoban": {
+          "mean": 0.80078125,
+          "successes": 205,
+          "episodes": 256,
+          "display": "80.08",
+          "unit": "percent"
+        }
+      },
+      "随机子集3": {
+        "navigation_standard": {
+          "mean": 0.7708333333333334,
+          "successes": 185,
+          "episodes": 240,
+          "display": "77.08",
+          "unit": "percent"
+        },
+        "navigation_long": {
+          "mean": 0.20416666666666666,
+          "successes": 49,
+          "episodes": 240,
+          "display": "20.42",
+          "unit": "percent"
+        },
+        "sokoban": {
+          "mean": 0.8203125,
+          "successes": 210,
+          "episodes": 256,
+          "display": "82.03",
+          "unit": "percent"
+        }
+      },
+      "仅覆盖选样": {
+        "navigation_standard": {
+          "mean": 0.7875,
+          "successes": 189,
+          "episodes": 240,
+          "display": "78.75",
+          "unit": "percent"
+        },
+        "navigation_long": {
+          "mean": 0.2,
+          "successes": 48,
+          "episodes": 240,
+          "display": "20.00",
+          "unit": "percent"
+        },
+        "sokoban": {
+          "mean": 0.8125,
+          "successes": 208,
+          "episodes": 256,
+          "display": "81.25",
+          "unit": "percent"
+        }
+      },
+      "仅视觉代表性选样": {
+        "navigation_standard": {
+          "mean": 0.7916666666666666,
+          "successes": 190,
+          "episodes": 240,
+          "display": "79.17",
+          "unit": "percent"
+        },
+        "navigation_long": {
+          "mean": 0.20416666666666666,
+          "successes": 49,
+          "episodes": 240,
+          "display": "20.42",
+          "unit": "percent"
+        },
+        "sokoban": {
+          "mean": 0.8203125,
+          "successes": 210,
+          "episodes": 256,
+          "display": "82.03",
+          "unit": "percent"
+        }
+      },
+      "无序决策匹配": {
+        "navigation_standard": {
+          "mean": 0.7666666666666667,
+          "successes": 184,
+          "episodes": 240,
+          "display": "76.67",
+          "unit": "percent"
+        },
+        "navigation_long": {
+          "mean": 0.1875,
+          "successes": 45,
+          "episodes": 240,
+          "display": "18.75",
+          "unit": "percent"
+        },
+        "sokoban": {
+          "mean": 0.85546875,
+          "successes": 219,
+          "episodes": 256,
+          "display": "85.55",
+          "unit": "percent",
+          "reused": true,
+          "source": "paper/final_protocol_sokoban_k4_matched100_20261031.json"
+        }
+      }
+    },
+    "data_budgets": {
+      "navigation_standard": {
+        "k1_opd": {
+          "mean": 0.7375,
+          "successes": 177,
+          "episodes": 240,
+          "display": "73.75",
+          "unit": "percent"
+        },
+        "k1_sft": {
+          "mean": 0.7041666666666667,
+          "successes": 169,
+          "episodes": 240,
+          "display": "70.42",
+          "unit": "percent"
+        },
+        "k16_opd": {
+          "mean": 0.8166666666666667,
+          "successes": 196,
+          "episodes": 240,
+          "display": "81.67",
+          "unit": "percent"
+        },
+        "k16_sft": {
+          "mean": 0.7541666666666667,
+          "successes": 181,
+          "episodes": 240,
+          "display": "75.42",
+          "unit": "percent"
+        }
+      },
+      "navigation_long": {
+        "k1_opd": {
+          "mean": 0.19166666666666668,
+          "successes": 46,
+          "episodes": 240,
+          "display": "19.17",
+          "unit": "percent"
+        },
+        "k1_sft": {
+          "mean": 0.175,
+          "successes": 42,
+          "episodes": 240,
+          "display": "17.50",
+          "unit": "percent"
+        },
+        "k16_opd": {
+          "mean": 0.2375,
+          "successes": 57,
+          "episodes": 240,
+          "display": "23.75",
+          "unit": "percent"
+        },
+        "k16_sft": {
+          "mean": 0.2125,
+          "successes": 51,
+          "episodes": 240,
+          "display": "21.25",
+          "unit": "percent"
+        }
+      },
+      "sokoban": {
+        "k1_opd": {
+          "mean": 0.8046875,
+          "successes": 206,
+          "episodes": 256,
+          "display": "80.47",
+          "unit": "percent"
+        },
+        "k1_sft": {
+          "mean": 0.75,
+          "successes": 192,
+          "episodes": 256,
+          "display": "75.00",
+          "unit": "percent"
+        },
+        "k16_opd": {
+          "mean": 0.83984375,
+          "successes": 215,
+          "episodes": 256,
+          "display": "83.98",
+          "unit": "percent"
+        },
+        "k16_sft": {
+          "mean": 0.7734375,
+          "successes": 198,
+          "episodes": 256,
+          "display": "77.34",
+          "unit": "percent"
+        }
+      },
+      "spatial_heldout": {
+        "k1_opd": {
+          "mean": 0.36,
+          "display": "0.36",
+          "unit": "score",
+          "reported_decimal_places": 2
+        },
+        "k1_sft": {
+          "mean": 0.33,
+          "display": "0.33",
+          "unit": "score",
+          "reported_decimal_places": 2
+        },
+        "k16_opd": {
+          "mean": 0.46,
+          "display": "0.46",
+          "unit": "score",
+          "reported_decimal_places": 2
+        },
+        "k16_sft": {
+          "mean": 0.42,
+          "display": "0.42",
+          "unit": "score",
+          "reported_decimal_places": 2
+        }
+      },
+      "spatial_two_room": {
+        "k1_opd": {
+          "mean": 0.21,
+          "display": "0.21",
+          "unit": "score",
+          "reported_decimal_places": 2
+        },
+        "k1_sft": {
+          "mean": 0.18,
+          "display": "0.18",
+          "unit": "score",
+          "reported_decimal_places": 2
+        },
+        "k16_opd": {
+          "mean": 0.31,
+          "display": "0.31",
+          "unit": "score",
+          "reported_decimal_places": 2
+        },
+        "k16_sft": {
+          "mean": 0.27,
+          "display": "0.27",
+          "unit": "score",
+          "reported_decimal_places": 2
+        }
+      }
+    }
+  }
+}

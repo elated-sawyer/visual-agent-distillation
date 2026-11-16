@@ -1,5 +1,15 @@
 # Online OPD baseline
 
+## Task budgets
+
+The completed 4B study uses **1, 4, 16, or all training tasks**. Full means 120 Navigation tasks, 128 Sokoban maps, or 16 SpatialGym rooms. SpatialGym K16 and full-task results refer to the same run. The 9B study currently includes full-task online OPD, not the smaller online task budgets.
+
+At K4, the online catalogue contains the exact tasks underlying the offline K4 trajectories. The online agent executes fresh responses and receives new observations. Offline replay keeps the original observations fixed. Both use 100 updates × 64 responses, but their generated-token counts and compute costs can differ. See [results](../results/README.md).
+
+The number of environment lanes remains 16 even when the catalogue contains fewer than 16 tasks; lanes can run different episodes of the same task. Supply the desired task subset through the catalogue below. This does not require changing the OPD loss or the per-update response budget.
+
+## Runtime
+
 The published adapter is the experimental **native-background-worker, turn-level** implementation: 16 persistent environment lanes, 64 executed responses per update, at most one batch of credit ahead, lag in [0,1], and native importance correction clipped to [0,2]. It is not the obsolete implementation that completes whole episodes and discards most turns.
 
 The core is `training/native_async_turns.py`; generation, scoring, stale-policy checks and evaluation draining are retained from the validated run. Each lane has a single active decision. The environment executes the sampled response before it is admitted to training. A stop due to context exhaustion does not create a synthetic supervised response. There is no environment-reward filter.

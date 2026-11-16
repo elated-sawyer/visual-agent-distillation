@@ -1,48 +1,56 @@
 # Visual Agent Distillation
 
-**Distilling Visual Agents from a Few Representative Trajectories**
+**Distilling Visual Agents from Limited Interaction Experience**
 
-Adapt a visual agent by reusing a small set of interaction histories. Select complete trajectories, retain their original images and causal prefixes, and transfer a stronger teacher's behavior through fresh student responses. Offline training needs no further environment interaction; the trained agent is evaluated through new interactions.
+How much interaction experience is needed to distill a capable visual agent? We study two complementary settings: **few-task online OPD**, which generates fresh interactions on a small task catalogue, and **fixed-history offline OPD**, which generates fresh student responses at recorded multimodal prefixes. Representative selection combines skill–context coverage with ordered visual decisions. Only the fixed-history branch needs no environment interaction during optimization.
 
-With **four selected trajectories per environment**, our Qwen3.5-4B student reaches **82.08% on Navigation** and **85.55% on Sokoban**, up from 49.17% and 60.16%. On held-out SpatialGym rooms, the mapping score rises from **0.255 to 0.411**, recovering **77.4% of the measured student–teacher gap**, with improvements in **all four held-out rooms**. This repository contains the training and evaluation implementation, compact trajectory examples, frozen configurations, and measured results.
+With **four selected trajectories per environment**, our Qwen3.5-4B student reaches **82.08% on Navigation** and **85.55% on Sokoban**, up from 49.17% and 60.16%, recovering over **90% of the measured student–teacher gap** on these panels. On an independent Navigation panel, replay improves **45.83% → 76.67%**, retaining **91.36% of the same-task online gain**. The study also includes matched SFT, a **9B student**, and supplementary training repetitions.
 
 [Results](#results) · [Method](#method) · [Trajectory examples](#explore-four-real-trajectories) · [Quick start](#quick-start) · [Training](#training-and-evaluation) · [Documentation](#documentation)
 
 > **Release scope:** the code starts from an already selected set of trajectories. Environment adapters, collection, prefix preparation, offline OPD, matched SFT, online OPD, and evaluation are included. The trajectory-selection front end is not released; its precomputed example annotations and choices are available to inspect.
 
-![Paper Figure 1: representative trajectory selection and OPD; K1/K4/K16/full-pool performance, selection gains, and task-level transfer on Navigation, Sokoban, and held-out SpatialGym rooms.](assets/figures/teaser.png)
+![Paper Figure 1: limited interaction experience, online and offline task/data budgets, and task-level transfer.](assets/figures/teaser.png)
 
-**Figure 1 — Few representative trajectories, broad task transfer.** Reproduced from the paper. **Skill–context coverage and ordered visual decisions** guide the selection of complete training trajectories for teacher-guided OPD. The curves compare K1/K4/K16/full-pool final scores after **100 updates × 64 responses**, with initial-student, teacher, and online OPD references. Four trajectories exceed the mean of three random K4 subsets by **6.25 and 5.34 percentage points** on Navigation and Sokoban, and recover **77.4% of the student–teacher gap** on held-out single-room SpatialGym. Lower panels show task-level changes using four-repeat means. Optimization needs no new environment interaction. Axes are zoomed and budgets are categorical; results use one training seed, with collaborator-reported K1/K16 and random controls. Click the image to view it at full resolution.
+**Figure 1 — Limited interaction experience, broad visual-agent transfer.** Reused from the current paper. Online budgets count tasks with fresh interaction; offline budgets count fixed trajectories. Shading marks task-matched K4. Four trajectories exceed three random subsets' mean by **6.25/5.34 percentage points** on Navigation/Sokoban and recover **77.4% of the teacher gap** on held-out SpatialGym rooms. Lower panels show changes in task-level four-repeat means. Axes are zoomed; budgets are categorical. These are single-run endpoints; offline K1/K16 and random controls are collaborator-reported.
 
 ## Results
 
-All adapted models below use **100 updates × 64 responses**, with the final model evaluated at **update 100**. The student is **Qwen3.5-4B** and the frozen teacher is **Qwen3.5-27B**. Each evaluation task is repeated four times.
+All adapted models below use **100 updates × 64 responses**, with final evaluation at **update 100** and four repeats per task. The frozen teacher is **Qwen3.5-27B**. The table matches the paper's symmetric **4B/9B** comparison; K4 here always means **offline** training.
 
 | Model / training method | Navigation standard ↑ | Navigation long-horizon ↑ | Sokoban ↑ | SpatialGym held-out single-room ↑ | SpatialGym two-room ↑ |
 |---|---:|---:|---:|---:|---:|
-| Original student, 4B | 49.17% | 13.33% | 60.16% | 0.255 | 0.116 |
-| Teacher, 27B | 85.00% | 25.00% | 88.28% | 0.457 | 0.378 |
-| **Representative K4 OPD** | **82.08%** | **22.08%** | **85.55%** | **0.411** | **0.270** |
-| Representative K4 SFT | 74.17% | 20.42% | 76.17% | 0.400 | 0.241 |
-| Full-pool OPD | 77.50% | 22.50% | 83.59% | 0.466 | 0.325 |
-| Full-pool SFT | 64.17% | 15.42% | 77.73% | 0.424 | 0.283 |
-| Online OPD | 78.75% | 21.25% | 85.94% | 0.476 | 0.305 |
+| Teacher, 27B (shared) | 85.00% | 25.00% | 88.28% | 0.4566 | 0.3777 |
+| **4B · Original student** | 49.17% | 13.33% | 60.16% | 0.2553 | 0.1157 |
+| 4B · Full-task online OPD | 78.75% | 21.25% | 85.94% | 0.4763 | 0.3051 |
+| 4B · K4 offline SFT | 74.17% | 20.42% | 76.17% | 0.3996 | 0.2413 |
+| **4B · K4 offline OPD** | **82.08%** | **22.08%** | **85.55%** | **0.4112** | **0.2700** |
+| **9B · Original student** | 67.08% | 25.83% | 64.06% | 0.2790 | 0.2023 |
+| 9B · Full-task online OPD | 86.25% | 20.00% | 87.50% | 0.4881 | 0.3212 |
+| 9B · K4 offline SFT | 72.92% | 23.75% | 83.20% | 0.4274 | 0.2555 |
+| **9B · K4 offline OPD** | **74.17%** | **24.58%** | **87.50%** | **0.4255** | **0.2976** |
 
-Four-trajectory OPD recovers **91.86% of the measured student–teacher gap on standard Navigation**, **90.28% on Sokoban**, and **77.4% on held-out SpatialGym rooms**, where gap recovery is `(adapted − original student) / (teacher − original student)`. The table retains both held-out single-room and two-room SpatialGym results.
+The same K4 histories transfer to the 9B student, including **87.50% on Sokoban**, matching its full-task online OPD result. Teacher-gap recovery is `(adapted − original student) / (teacher − original student)`; online-gain retention instead uses the online model in the denominator.
 
 Navigation and Sokoban report **binary success rates**. SpatialGym reports its **continuous cognitive-map score**, not a success percentage. The held-out single-room panel is a four-room development split; the two-room panel tests transfer to a different room layout. Navigation long-horizon uses different task configurations in the same simulator scenes.
 
-The candidate pools contain **120 Navigation, 128 Sokoban, and 32 SpatialGym trajectories**. K4 denotes the four retained histories, not the cost of collecting the pool. Results use one training seed; equal response/update counts do not imply equal token or compute costs.
+The candidate pools contain **120 Navigation, 128 Sokoban, and 32 SpatialGym trajectories**, collected by the original 4B student. K4 denotes retained histories, not total collection cost. Main-table entries are single-run endpoints; four supplementary training repetitions are reported separately. Equal response/update counts do not imply equal token or compute costs.
 
-Source: [full-precision results](results/main.json), [five-update monitoring curves](results/learning_curves.csv), and [result definitions](results/README.md). This table uses the released 100-update results; it does not mix in earlier 50-update experiments.
+### Few tasks versus fixed histories
+
+![Paper data-budget figure: offline OPD/SFT and online OPD across one, four, sixteen, and full budgets.](assets/figures/data_budget.png)
+
+**K is a data/task budget, not the number of training responses.** Each run still learns 6,400 responses. With the same four tasks, online/offline OPD achieves **82.50%/82.08%** on standard Navigation and **84.38%/85.55%** on Sokoban. One online training task already supports substantial transfer; the best budget depends on the environment. Full SpatialGym online training uses all **16 rooms**, while its offline pool contains **32 histories**.
+
+See the [complete result guide](results/README.md) for K1/K4/K16/full-pool tables, independent-panel results, selection controls, training repetitions, and all **480 measured 4B/9B monitoring points**. Source snapshots retain collaborator attribution and distinguish reused results. Earlier 50-update experiments are not mixed into these tables.
 
 ## Method
 
 ### From representative histories to fresh supervision
 
-![Paper Figure 2: collect candidate trajectories, describe and select representative histories, reuse original multimodal prefixes, and train with OPD or matched SFT before environment evaluation.](assets/figures/method.png)
+![Paper Figure 2: representative selection followed by fixed-history OPD or SFT, or fresh online interaction on selected tasks.](assets/figures/method.png)
 
-**Figure 2 — Representative trajectory selection and distillation.** Reproduced from the paper. Both training branches consume the same original causal prefixes: OPD resamples student responses and obtains teacher token scores; SFT learns teacher-generated responses. Skill and visual-decision annotations are used only for selection. Observation grids and descriptions in the diagram are schematic examples.
+**Figure 2 — Representative selection and two uses of interaction experience.** Reproduced from the paper. Fixed-history OPD and matched SFT share original causal prefixes; the online comparison executes responses on selected tasks to refresh histories. K4 task identities match across online and offline training. Annotations enter neither model's training prompt.
 
 The figure shows the complete research method. Its **“Describe and select” stage is not included in this code release**; the released training code accepts already selected trajectories as an explicit file list. In the full method, selection combines skill–context coverage with ordered visual decision similarity.
 
@@ -70,7 +78,7 @@ A_t = log p_teacher(y_t | prefix, y_<t)
 
 Its coefficient is 1, with no environment-reward term or additional reference KL. In SFT, the target is a newly generated teacher response, including thinking; it is not the saved student's historical response. Online OPD uses the native asynchronous worker, 16 persistent environment lanes, bounded policy lag, and importance correction.
 
-See [method and data contracts](docs/METHOD.md) for the exact schemas and [online OPD](docs/ONLINE_OPD.md) for the streaming baseline.
+See [method and data contracts](docs/METHOD.md) for the selection overview, mathematical definitions, and schemas, and [online OPD](docs/ONLINE_OPD.md) for task budgets and the streaming baseline.
 
 ## Explore four real trajectories
 
@@ -187,14 +195,14 @@ The default OPD launcher requests **8 actor GPUs + 4 rollout GPUs**, plus **2 se
 configs/               Training recipes, model revisions, environment protocols
   panels/              Frozen task, seed, and repeat lists
   evaluations/         Live monitoring and final evaluation schedules
-assets/figures/        Original paper Figures 1 and 2, reused without redrawing
+assets/figures/        Current paper figures, reused without redrawing
 data/                  Compact trajectory examples and precomputed annotations
 examples/              Human-readable trajectory walkthroughs
 images/                Original observation images for the released examples
 mosaic_distill/        Image storage, causal records, environment adapters, scoring
 training/              Native Slime OPD/SFT hooks and asynchronous online OPD
 scripts/               Data preparation, collection, evaluation, and plotting
-results/               Full-precision results and measured learning curves
+results/               4B/9B, online budgets, follow-up results, and measured curves
 tests/                 Lightweight CPU contract checks
 integration_tests/     Optional checks requiring a compatible training container
 docs/                  Method, training, environment, and validation guides
