@@ -219,6 +219,10 @@ docs/                  Method, training, environment, and example guides
 | [Walkthrough](docs/WALKTHROUGH.md) | Four real trajectories and ten replay prefixes |
 | [Results](results/README.md) | Experimental definitions and machine-readable evidence |
 
+## License
+
+The authors' code is licensed under the [MIT License](LICENSE). Third-party code, datasets, simulator assets, and model weights retain their respective licenses; see [THIRD_PARTY.md](THIRD_PARTY.md).
+
 ## Acknowledgments
 
-The implementation builds on **Slime, Megatron-LM, SGLang, Transformers, VAGEN, gym-sokoban, AI2-THOR, SpatialGym, and Qwen**. See [third-party sources and notices](THIRD_PARTY.md). A general license for the authors' code has not yet been assigned; upstream licenses remain in effect.
+The implementation builds on **Slime, Megatron-LM, SGLang, Transformers, VAGEN, gym-sokoban, AI2-THOR, SpatialGym, and Qwen**. See [third-party sources and notices](THIRD_PARTY.md).

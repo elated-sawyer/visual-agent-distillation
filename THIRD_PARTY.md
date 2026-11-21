@@ -8,4 +8,4 @@
 - SpatialGym dataset: https://huggingface.co/datasets/yw12356/spatial_gym_dataset. Data is downloaded separately at the revision in the environment protocol; no room images are bundled.
 - Qwen3.5-4B, 9B and 27B: model weights are external. Their original model terms apply; revisions are listed in `configs/models.json`.
 
-Third-party components retain their upstream licenses. A general license for the authors' code and research artifacts has not yet been assigned.
+The authors' code is licensed under the [MIT License](LICENSE). Third-party code, datasets, simulator assets, and model weights retain their upstream licenses.
