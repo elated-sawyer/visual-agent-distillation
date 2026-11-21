@@ -1,4 +1,4 @@
-"""Functions retained verbatim from the validated online adapter."""
+"""Read ready, unclaimed decisions from persistent environment lanes."""
 import copy, hashlib, json, random
 from pathlib import Path
 from online_contract import read,digest

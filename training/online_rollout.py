@@ -1,4 +1,4 @@
-"""Functions retained verbatim from the validated online adapter."""
+"""Convert recorded multimodal messages into native Slime samples."""
 import copy, hashlib, json, random
 from pathlib import Path
 def native_messages(messages, store):

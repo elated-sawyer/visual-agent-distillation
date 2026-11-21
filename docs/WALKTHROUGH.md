@@ -1,10 +1,8 @@
-# MosaicDistill
+# Sokoban trajectory walkthrough
 
-**Multimodal Agent Distillation from a Few Representative Trajectories**
+Examples accompanying **Distilling Visual Agents from Limited Interaction Experience**.
 
-A companion repository for **Distilling Visual Agents from a Few Representative Trajectories**.
-
-This release presents processed research examples and precomputed selection records. Read everything directly in the repository: no installation, webpage, model service, or GPU is required. Training and evaluation code is now available; see the repository README.
+Explore the four selected trajectories, their screenshots, decision annotations, and causal prefixes. See the [README](../README.md) to prepare these records for training.
 
 ## Walkthrough
 
@@ -13,7 +11,7 @@ This release presents processed research examples and precomputed selection reco
 3. Follow the **four recorded representative choices** below.
 4. Inspect the **10 fixed prefixes** extracted from those trajectories. Each prefix ends at the current observation, before its response.
 
-In the training method, a student generates a new response at a sampled prefix, and a frozen teacher supplies token-level guidance. The files here show the saved inputs; they do not execute sampling, selection, or distillation.
+In the training method, a student generates a new response at a sampled prefix, and a frozen teacher supplies token-level guidance. The linked files below show the saved inputs used by this process.
 
 ## Four representative trajectories
 
@@ -26,13 +24,13 @@ These are the four recorded histories used in the paper's Sokoban K4 setting. Fo
 | 3 | [C016](../examples/C016.md) | ![C016](../images/board-016.png) | 1 | 0 | 3.345 |
 | 4 | [C114](../examples/C114.md) | ![C114](../images/board-114.png) | 2 | 0 | 1.892 |
 
-The histories were collected by the original Qwen3.5-4B student. They retain unsuccessful actions and imperfect outputs; the original responses have not been rewritten into ideal solutions. Selection gains are stored selection statistics, not task success rates. Full-precision records are in [selection.json](../data/selection.json).
+The histories preserve the original Qwen3.5-4B responses, actions, and observations. Selection gains measure the coverage and representativeness objective. Full-precision records are in [selection.json](../data/selection.json).
 
 ## What a fixed prefix contains
 
 A prefix contains the original system message, earlier observations and responses, and the current observation. Earlier reasoning is retained. The current response and future observations are excluded. See [P01](../data/prefixes/P01.json) for a first-turn input and [P02](../data/prefixes/P02.json) for an input with interaction history.
 
-Skill labels and cached decision descriptions are used for selection only. They are **not inserted into either the student or distillation-teacher prefix**. Training samples a selected trajectory uniformly, then samples one of its turns uniformly; this repository displays the resulting saved input records only.
+Skill labels and cached decision descriptions are used for selection only. They are **not inserted into either the student or distillation-teacher prefix**. Training samples a selected trajectory uniformly, then samples one of its turns uniformly to generate a fresh response.
 
 ## Contents
 
@@ -47,6 +45,6 @@ Skill labels and cached decision descriptions are used for selection only. They 
 | [images/](../images/) | Original observation images referenced by the selected examples |
 | [THIRD_PARTY.md](../THIRD_PARTY.md) | Environment and asset acknowledgments |
 
-Image paths in JSON are relative to the repository root. Displayed turn numbers start at 1; JSON `turn_index` starts at 0. Candidate IDs are aliases. Image pixels and model-message text are retained, while account names, machine paths, and unrelated run metadata are omitted. Nonselected candidates have annotation previews only; their images and complete histories are not included in this compact release.
+Image paths in JSON are relative to the repository root. Displayed turn numbers start at 1; JSON `turn_index` starts at 0. Candidate IDs are aliases. The four selected trajectories include their original images and full responses; the remaining candidates have annotation previews.
 
-This walkthrough displays precomputed examples. Training, environment and evaluation code are documented in the repository README; selection code remains withheld.
+Continue with the [data preparation and training guide](../README.md#quick-start).

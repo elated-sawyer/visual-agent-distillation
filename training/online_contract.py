@@ -1,4 +1,4 @@
-"""Functions retained verbatim from the validated online adapter."""
+"""Validate task catalogues and sample tasks for online interaction."""
 import copy, hashlib, json, random
 from pathlib import Path
 def read(path):

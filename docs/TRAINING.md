@@ -2,11 +2,11 @@
 
 ## Runtime
 
-Use a compatible **Slime 0.4.0 container family**, with its Megatron and SGLang packages. Do not install a second Torch/CUDA stack over a working container. This project uses native Megatron language layers plus the Transformers vision module, TP4/CP1, micro-batch 1, full activation recomputation and exact multimodal teacher scoring. `training/mm_native_provider.py` contains the validated CP1 indexing correction; `qwen_exact_ids.py` preserves exact input IDs in the teacher's Qwen processor. These hooks depend on the pinned runtime API, not merely a version string.
+Use a compatible **Slime 0.4.0 container** with its Megatron, SGLang, Torch, and CUDA packages. This project uses native Megatron language layers plus the Transformers vision module, TP4/CP1, micro-batch 1, full activation recomputation and exact multimodal teacher scoring. `training/mm_native_provider.py` contains the CP1 indexing correction; `qwen_exact_ids.py` preserves exact input IDs in the teacher's Qwen processor. Use the pinned runtime APIs for these integration hooks.
 
 The formal recipes use Qwen3.5-4B or 9B students and Qwen3.5-27B teacher; exact revisions are in `configs/models.json`. Student/teacher tokenizers and visual preprocessing must match. The learning rate is 1e-6, Adam betas 0.9/0.98, weight decay 0.1, 100 updates × batch 64, response cap 32,768, temperature/top-p 1 and top-k −1. The three context limits differ; use the corresponding recipe.
 
-Create a Ray cluster on your allocated training/inference nodes before launch. The default launcher requests 8 actor GPUs and 4 rollout GPUs; a separately launched TP2 teacher needs 2 more GPUs. The authors used separate training and inference nodes. Native Ray placement is used here; private IP binding, scheduler, RDMA setup and node allocation scripts are not distributed. Reserve disjoint resources for an externally launched teacher rather than letting Ray place an actor on it. All nodes must see the same code, model, data and output paths.
+Create a Ray cluster on your allocated training/inference nodes before launch. The default launcher requests 8 actor GPUs and 4 rollout GPUs; a separately launched TP2 teacher needs 2 more GPUs. Ray manages placement across the training and inference nodes. Reserve disjoint resources for an externally launched teacher rather than letting Ray place an actor on it. All nodes must see the same code, model, data and output paths.
 
 ```bash
 export SLIME_ROOT=/path/to/slime
@@ -17,7 +17,7 @@ export RAY_ADDRESS=auto
 export WANDB_PROJECT=mosaic-distill
 ```
 
-For 9B, additionally set `MODEL_ARGS_FILE=$PWD/training/models/qwen3.5-9B.sh`. The default 4B model arguments come from the Slime checkout. GPU allocations are deployment parameters; the long contexts require a real memory preflight before reducing resources.
+For 9B, additionally set `MODEL_ARGS_FILE=$PWD/training/models/qwen3.5-9B.sh`. The default 4B model arguments come from the Slime checkout. Set GPU allocation and memory budgets for the selected model and context length.
 
 ## OPD
 
@@ -37,7 +37,7 @@ CUDA_VISIBLE_DEVICES=0,1 python training/launch_exact_mm_teacher.py \
   --context-length 114696 --mem-fraction-static 0.78 --max-running-requests 32
 ```
 
-Use the recipe's training context + 8 for the teacher; 114696 above is Sokoban. Do not enable automatic prompt truncation. Reachability and GPU placement depend on your deployment.
+Use the recipe's training context + 8 for the teacher; 114696 above is Sokoban. Keep automatic prompt truncation disabled and expose the teacher endpoint to the training nodes.
 
 3. On the Ray head:
 
@@ -46,7 +46,7 @@ export TEACHER_URL=http://TEACHER_HOST:30004/generate
 bash training/train.sh opd outputs/opd
 ```
 
-The launcher stores offline W&B records and saves only the final native/HF outputs. Remove the native copy after verifying the HF export if no resume is needed. A final save can require substantial extra disk space. No intermediate weight checkpoints are required for the optional live monitoring below.
+The launcher records W&B data offline and saves the final native checkpoint and HF export. Live monitoring evaluates the current weights every five updates.
 
 ## Matched SFT
 
@@ -61,11 +61,11 @@ python training/validate_inputs.py outputs/sft
 bash training/train.sh sft outputs/sft
 ```
 
-Use a fresh label directory. The original collector fails visibly on an interrupted request; it does not silently reuse partial or differently seeded labels. Source responses are regenerated once per draw, with no outcome filter. Label SHA256 and teacher/student prefix identities are checked during training. Default SFT has 8 actor GPUs and no inference engines; adding live evaluation starts inference engines as described next.
+Use a fresh label directory. The teacher generates one response per draw without outcome filtering. Training checks label hashes and matching teacher/student prefix identities. Default SFT has 8 actor GPUs and no inference engines; adding live evaluation starts inference engines as described next.
 
 ## Live monitoring every five updates
 
-`prepare_evaluation.py` attaches a frozen panel schedule. Each descriptor has `name`, `scope` (`monitor` or `final`), `environment`, and paths to the environment protocol and slot list. Paths are relative to the descriptor file. `configs/evaluations/*.json` provide the paper panels. Final evaluation runs at update 100; the checkpoint is not selected from curve maxima. Navigation's 16 monitoring tasks are a subset of its 60 standard final tasks, and SpatialGym reuses its four held-out rooms for monitoring.
+`prepare_evaluation.py` attaches a frozen panel schedule. Each descriptor has `name`, `scope` (`monitor` or `final`), `environment`, and paths to the environment protocol and slot list. Paths are relative to the descriptor file. `configs/evaluations/*.json` provide the paper panels. Final evaluation uses the fixed update-100 weights. Navigation's 16 monitoring tasks are a subset of its 60 standard final tasks, and SpatialGym reuses its four held-out rooms for monitoring.
 
 ```bash
 python scripts/prepare_evaluation.py --run outputs/opd \
@@ -78,4 +78,4 @@ bash training/train.sh opd outputs/opd          # separate training process
 
 For SFT, attach the same schedule to `outputs/sft`, use `--rollout-gpus 8` and `ROLLOUT_GPUS=8`. Both commands require the compatible environment runtime. Navigation workers must run under the rendering guard. The evaluator checks exact task/repeat identities, weight version before/after evaluation, and completion. A failure stops evaluation rather than treating missing episodes as unsuccessful outcomes.
 
-Portable launchers do not allocate nodes, start/stop unrelated Ray jobs or install packages globally. CPU release checks do not establish GPU memory feasibility; consult `docs/VALIDATION.md`.
+The launchers use the Ray cluster and environment services configured above.

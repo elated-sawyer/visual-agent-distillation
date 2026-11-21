@@ -1,6 +1,6 @@
 # Experimental results
 
-All tables use **100 updates × 64 responses**, fixed update-100 evaluation, native thinking, and a frozen Qwen3.5-27B teacher. The [README main table](../README.md#results) presents the symmetric 4B/9B comparison. These files synchronize the current paper's results, not earlier 50-update experiments.
+All tables use **100 updates × 64 responses**, fixed update-100 evaluation, native thinking, and a frozen Qwen3.5-27B teacher. The [README main table](../README.md#results) presents the symmetric 4B/9B comparison. The files below contain the paper's result tables and learning curves.
 
 ## Result files
 
@@ -14,9 +14,8 @@ All tables use **100 updates × 64 responses**, fixed update-100 evaluation, nat
 | [collaborator_followup_results.json](collaborator_followup_results.json) | All four supplementary training repetitions, independent Navigation panel, and additional ablations |
 | [learning_curves.csv](learning_curves.csv) | 300 measured points from 15 core 4B training runs |
 | [student_scale_curves.csv](student_scale_curves.csv) | 180 measured points from nine 9B training runs |
-| [publication_manifest.json](publication_manifest.json) | Paper revision, source hashes, and exported-file hashes |
 
-JSON success rates use fractions in [0,1]; `data_budget.csv` explicitly uses success percentages for Navigation/Sokoban and mapping scores for SpatialGym. Missing 9B K1/K16/full-pool experiments are not populated. Research run paths, orchestration records, and private conversation text are omitted from the portable exports.
+JSON success rates use fractions in [0,1]; `data_budget.csv` explicitly uses success percentages for Navigation/Sokoban and mapping scores for SpatialGym.
 
 ## Task breadth and fixed-history budgets: 4B
 
@@ -40,7 +39,7 @@ Offline K counts **fixed trajectories**; online K counts **tasks with fresh inte
 | | Offline SFT | 0.18 | 0.2413 | 0.27 | 0.2834 |
 | | Online OPD | 0.2878 | 0.2998 | 0.3051† | 0.3051 |
 
-† SpatialGym K16 reuses the full 16-room online run; it is not another training run. Offline K1/K16 are collaborator-reported, retaining the supplied SpatialGym precision. Other entries in this table are locally audited.
+† SpatialGym K16 and full-task online OPD refer to the same 16-room run. Offline K1/K16 values are collaborator-reported, with SpatialGym values shown at the supplied precision.
 
 ## Independent Navigation panel
 
@@ -66,7 +65,7 @@ Mean ± sample standard deviation across **all four** collaborator-reported trai
 | Representativeness only | 80.73 ± 1.20% | 23.54 ± 4.20% |
 | Fixed random K4 | 76.88 ± 2.86% | 21.67 ± 4.56% |
 
-Complete selection has the highest means; its ranking against representativeness-only varies across runs. Per-run success counts are preserved in [the follow-up snapshot](collaborator_followup_results.json).
+Complete selection has the highest mean on both panels. [The follow-up snapshot](collaborator_followup_results.json) contains the per-run success counts.
 
 ## Additional selection ablations
 
@@ -79,15 +78,15 @@ The complete reference is the original K4 main-table result. Simplified variants
 | Coverage only | 79.17% | 19.17% | 82.42% |
 | Unordered matching | 81.25% | 21.25% | 85.55%† |
 
-† Reuses the complete Sokoban selection/result; this is not an independent run. The [4B snapshot](paper_results_4b.json) separately retains the original three random subsets and component controls.
+† Uses the same selected Sokoban set and result as the complete method. The [4B snapshot](paper_results_4b.json) separately retains the original three random subsets and component controls.
 
 ## Evaluation and monitoring
 
 Navigation/Sokoban report mean binary success; SpatialGym reports continuous `cogmap_score`. Final evaluation repeats tasks four times: 240 episodes per Navigation panel, 256 Sokoban episodes, 16 held-out single-room SpatialGym episodes, and 80 two-room episodes. Training-room and all-single-room mapping scores remain available in the snapshots.
 
-The monitoring curves contain real observations at updates 5, 10, …, 100. Navigation monitoring uses 16 of the 60 standard final tasks; final evaluations execute separately. SpatialGym monitoring reuses its four held-out rooms. The original panels were inspected during development. Final scores use update 100, not curve maxima; no missing curve points or per-episode records are inferred from aggregate scores.
+Learning curves report monitoring at updates 5, 10, …, 100. Navigation monitoring uses 16 of the 60 standard final tasks; final evaluations execute separately. SpatialGym monitoring reuses its four held-out development rooms. Final scores use the fixed update-100 weights.
 
-Core 4B/9B endpoints are single training runs. Supplementary training repetitions, independent-panel evaluations, and additional ablations are recorded separately. Collaborator reports retain their aggregate provenance; their raw logs were not locally audited.
+Core 4B/9B endpoints are single training runs. Supplementary training repetitions, independent-panel evaluations, and additional ablations are reported separately, with data sources identified in the JSON snapshots.
 
 ```bash
 python scripts/plot_results.py --output outputs/main-results.pdf

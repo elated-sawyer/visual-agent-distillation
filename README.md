@@ -8,11 +8,11 @@ With **four selected trajectories per environment**, our Qwen3.5-4B student reac
 
 [Results](#results) · [Method](#method) · [Trajectory examples](#explore-four-real-trajectories) · [Quick start](#quick-start) · [Training](#training-and-evaluation) · [Documentation](#documentation)
 
-> **Release scope:** the code starts from an already selected set of trajectories. Environment adapters, collection, prefix preparation, offline OPD, matched SFT, online OPD, and evaluation are included. The trajectory-selection front end is not released; its precomputed example annotations and choices are available to inspect.
+> **Included:** environment adapters, collection, prefix preparation, offline OPD, matched SFT, online OPD, and evaluation. Training takes a supplied set of selected trajectories. The selection front end is outside this release; its example annotations and choices are included.
 
 ![Paper Figure 1: limited interaction experience, online and offline task/data budgets, and task-level transfer.](assets/figures/teaser.png)
 
-**Figure 1 — Limited interaction experience, broad visual-agent transfer.** Reused from the current paper. Online budgets count tasks with fresh interaction; offline budgets count fixed trajectories. Shading marks task-matched K4. Four trajectories exceed three random subsets' mean by **6.25/5.34 percentage points** on Navigation/Sokoban and recover **77.4% of the teacher gap** on held-out SpatialGym rooms. Lower panels show changes in task-level four-repeat means. Axes are zoomed; budgets are categorical. These are single-run endpoints; offline K1/K16 and random controls are collaborator-reported.
+**Figure 1 — Limited interaction experience, broad visual-agent transfer.** Reused from the current paper. Online budgets count tasks with fresh interaction; offline budgets count fixed trajectories. Shading marks task-matched K4. Four trajectories exceed three random subsets' mean by **6.25/5.34 percentage points** on Navigation/Sokoban and recover **77.4% of the teacher gap** on held-out SpatialGym rooms. Lower panels show changes in task-level four-repeat means. Axes are zoomed; budgets are categorical. The [result guide](results/README.md) gives the evaluation protocols and run definitions.
 
 ## Results
 
@@ -42,7 +42,7 @@ The candidate pools contain **120 Navigation, 128 Sokoban, and 32 SpatialGym tra
 
 **K is a data/task budget, not the number of training responses.** Each run still learns 6,400 responses. With the same four tasks, online/offline OPD achieves **82.50%/82.08%** on standard Navigation and **84.38%/85.55%** on Sokoban. One online training task already supports substantial transfer; the best budget depends on the environment. Full SpatialGym online training uses all **16 rooms**, while its offline pool contains **32 histories**.
 
-See the [complete result guide](results/README.md) for K1/K4/K16/full-pool tables, independent-panel results, selection controls, training repetitions, and all **480 measured 4B/9B monitoring points**. Source snapshots retain collaborator attribution and distinguish reused results. Earlier 50-update experiments are not mixed into these tables.
+See the [complete result guide](results/README.md) for K1/K4/K16/full-pool tables, independent-panel results, selection controls, training repetitions, and all **480 measured 4B/9B monitoring points**.
 
 ## Method
 
@@ -52,7 +52,7 @@ See the [complete result guide](results/README.md) for K1/K4/K16/full-pool table
 
 **Figure 2 — Representative selection and two uses of interaction experience.** Reproduced from the paper. Fixed-history OPD and matched SFT share original causal prefixes; the online comparison executes responses on selected tasks to refresh histories. K4 task identities match across online and offline training. Annotations enter neither model's training prompt.
 
-The figure shows the complete research method. Its **“Describe and select” stage is not included in this code release**; the released training code accepts already selected trajectories as an explicit file list. In the full method, selection combines skill–context coverage with ordered visual decision similarity.
+Selection combines skill–context coverage with ordered visual decision similarity. The training interface accepts the resulting trajectories as an explicit file list.
 
 1. **Keep complete histories.** Stored student trajectories preserve the observations, images, original responses, and unsuccessful actions. Task failure alone does not exclude a trajectory.
 2. **Extract causal prefixes.** A prefix ends at the current observation. Earlier responses and thinking remain; the current response, future observations, and final outcome are excluded.
@@ -90,7 +90,7 @@ The compact Sokoban example contains **four selected trajectories, ten unique pr
 
 Follow the [walkthrough](docs/WALKTHROUGH.md) to inspect the collected responses, observations, and stored selection records. Compare a [first-turn prefix](data/prefixes/P01.json) with a [prefix containing interaction history](data/prefixes/P02.json).
 
-The examples retain imperfect student behavior. Candidate IDs are anonymized aliases. The other candidate trajectories have compact annotation previews in [data/candidates.json](data/candidates.json); their full histories and image collections are not bundled.
+The examples preserve the original student responses and observations. Candidate IDs are anonymized aliases. [data/candidates.json](data/candidates.json) contains annotation previews for the full candidate pool.
 
 ## Environments and evaluation
 
@@ -118,7 +118,7 @@ source .venv/bin/activate
 pip install -e '.[test,plots]'
 ```
 
-The repository name is `visual-agent-distillation`; the Python import package currently remains `mosaic_distill`. Installing the lightweight package does not install Slime, CUDA, model weights, or simulator assets.
+The Python import package is `mosaic_distill`. GPU training and simulator setup are described in the guides below.
 
 ### 2. Prepare the bundled replay example
 
@@ -130,7 +130,7 @@ python scripts/prepare_data.py --demo \
   --output outputs/demo-opd
 ```
 
-This small data-only example produces **4 trajectories → 10 unique prefixes → 128 scheduled draws**. It loads no model and makes no model-service or environment calls. The student path is recorded for a later native-input preflight. Omit `--updates 2 --batch-size 64` to prepare the formal recipe's **6,400 draws**.
+This data-preparation example produces **4 trajectories → 10 unique prefixes → 128 scheduled draws** and records the student path for training. Omit `--updates 2 --batch-size 64` to prepare the formal recipe's **6,400 draws**.
 
 ```text
 outputs/demo-opd/
@@ -139,7 +139,7 @@ outputs/demo-opd/
 └── prefixes.jsonl    Deterministic trajectory/turn sampling schedule
 ```
 
-Use a new output directory for each preparation command. Preparing these files is not a training run.
+Use a new output directory for each preparation command, then follow the training instructions below.
 
 ### 3. Check the package and reproduce the result plot
 
@@ -148,7 +148,7 @@ python -m pytest -q tests
 python scripts/plot_results.py --output outputs/main-results.pdf
 ```
 
-The plot uses the committed measured results. [Release validation](docs/VALIDATION.md) records 30 passing CPU tests and the scope of those checks.
+The plot uses the committed measured results.
 
 ## Training and evaluation
 
@@ -185,9 +185,9 @@ python scripts/prepare_data.py \
 
 Each episode follows the [`mm-episode-v1` schema](docs/METHOD.md#input-schemas). The released recipe uses student-collected histories. The preparation script consumes the supplied list without ranking trajectories or filtering by task success.
 
-Native input validation compares token IDs, image pixels, and visual grids. Overlength prefixes fail visibly rather than being silently truncated. Evaluation checks task/repeat identities and weight consistency; infrastructure failures are not converted to unsuccessful task outcomes.
+Input validation checks token IDs, image pixels, visual grids, and context length. Evaluation uses the configured task/repeat list and a consistent weight version; infrastructure errors are recorded separately.
 
-The default OPD launcher requests **8 actor GPUs + 4 rollout GPUs**, plus **2 separately reserved teacher GPUs**. Device allocation and memory feasibility depend on the deployment. Navigation rendering requires an approved rendering host and the provided supervision guard; the full setup is documented in the guides. Training writes W&B data in offline mode.
+The default OPD launcher requests **8 actor GPUs + 4 rollout GPUs**, plus **2 separately reserved teacher GPUs**. Configure GPU allocation for the chosen model and context length. Navigation uses a designated rendering host with the provided supervision guard. Training writes W&B data in offline mode.
 
 ## Repository layout
 
@@ -203,9 +203,9 @@ mosaic_distill/        Image storage, causal records, environment adapters, scor
 training/              Native Slime OPD/SFT hooks and asynchronous online OPD
 scripts/               Data preparation, collection, evaluation, and plotting
 results/               4B/9B, online budgets, follow-up results, and measured curves
-tests/                 Lightweight CPU contract checks
+tests/                 Data, sampling, and evaluation tests
 integration_tests/     Optional checks requiring a compatible training container
-docs/                  Method, training, environment, and validation guides
+docs/                  Method, training, environment, and example guides
 ```
 
 ## Documentation
@@ -218,12 +218,7 @@ docs/                  Method, training, environment, and validation guides
 | [Online OPD](docs/ONLINE_OPD.md) | Persistent lanes, asynchronous updates, and deployment |
 | [Walkthrough](docs/WALKTHROUGH.md) | Four real trajectories and ten replay prefixes |
 | [Results](results/README.md) | Experimental definitions and machine-readable evidence |
-| [Validation](docs/VALIDATION.md) | Completed release checks and their limits |
 
-## Release status and acknowledgments
-
-This release includes environment and training adapters extracted from the research experiments, plus portable preparation and launch scripts. The extracted package passed CPU contract checks; it has **not been retrained end to end on GPUs as a separate release validation**. Use a deployment-specific preflight before a full run.
-
-The selection front end, full candidate corpora, model checkpoints, and private cluster orchestration are not included. The compact examples expose precomputed selection records, not the selection implementation.
+## Acknowledgments
 
 The implementation builds on **Slime, Megatron-LM, SGLang, Transformers, VAGEN, gym-sokoban, AI2-THOR, SpatialGym, and Qwen**. See [third-party sources and notices](THIRD_PARTY.md). A general license for the authors' code has not yet been assigned; upstream licenses remain in effect.

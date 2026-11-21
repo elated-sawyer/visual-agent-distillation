@@ -1,4 +1,4 @@
-"""Audit sampled response scores before any future learner consumes them."""
+"""Extract teacher log probabilities aligned with sampled response tokens."""
 import math
 
 

@@ -1,4 +1,4 @@
-"""Connect an explicit train-task catalogue to the validated 16-lane online adapter."""
+"""Connect a training-task catalogue to the 16-lane online adapter."""
 import argparse,json,sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'training')]
