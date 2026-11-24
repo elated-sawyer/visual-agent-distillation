@@ -2,6 +2,8 @@
 
 **Distilling Visual Agents from Limited Interaction Experience**
 
+[Paper (arXiv)](https://arxiv.org/abs/2611.28618) · [PDF](https://arxiv.org/pdf/2611.28618) · [BibTeX](#citation)
+
 How much interaction experience is needed to distill a capable visual agent? We study two complementary settings: **few-task online OPD**, which generates fresh interactions on a small task catalogue, and **fixed-history offline OPD**, which generates fresh student responses at recorded multimodal prefixes. Representative selection combines skill–context coverage with ordered visual decisions. Only the fixed-history branch needs no environment interaction during optimization.
 
 With **four selected trajectories per environment**, our Qwen3.5-4B student reaches **82.08% on Navigation** and **85.55% on Sokoban**, up from 49.17% and 60.16%, recovering over **90% of the measured student–teacher gap** on these panels. On an independent Navigation panel, replay improves **45.83% → 76.67%**, retaining **91.36% of the same-task online gain**. The study also includes matched SFT, a **9B student**, and supplementary training repetitions.
@@ -218,6 +220,20 @@ docs/                  Method, training, environment, and example guides
 | [Online OPD](docs/ONLINE_OPD.md) | Persistent lanes, asynchronous updates, and deployment |
 | [Walkthrough](docs/WALKTHROUGH.md) | Four real trajectories and ten replay prefixes |
 | [Results](results/README.md) | Experimental definitions and machine-readable evidence |
+
+## Citation
+
+```bibtex
+@misc{zhou2026distillingvisualagents,
+  title         = {Distilling Visual Agents from Limited Interaction Experience},
+  author        = {Siyu Zhou and Jing Jiang and Chengqi Zhang and Guodong Long},
+  year          = {2026},
+  eprint        = {2611.28618},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  url           = {https://arxiv.org/abs/2611.28618}
+}
+```
 
 ## License
 
